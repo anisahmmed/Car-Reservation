@@ -1,0 +1,208 @@
+/*map*/
+.responsive-map-container {
+    position: relative;
+    padding-bottom: 28.25%;
+    padding-top: 30px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.responsive-map-container iframe,
+.responsive-map-container object,
+.responsive-map-container embed {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 600px;
+}
+
+/*search count color*/
+.search-color {
+    color: red;
+    font-size: 35px !important;
+}
+.my_search{
+    height: calc(2.875rem + 8px);
+    border-radius: 10px;
+}
+
+.related-cars {
+    margin-top: 50px;
+}
+.related-cars .title {
+    text-transform: capitalize;
+    margin-bottom:30px;
+}
+
+/*---------------------------
+Team Details Page Start
+---------------------------*/
+.team-details {
+    margin-bottom: 20px;
+    padding: 113px 0px 80px; }
+.team-details .about-img img {
+    width: 100%; }
+.team-details .about-the-member .info {
+    margin-bottom: 62px; }
+.team-details .about-the-member .info .short-info-list ul li p {
+    line-height: 31px;
+    margin-bottom: 0px; }
+.team-details .about-the-member .info .shortbio {
+    margin-top: 17px; }
+.team-details .about-the-member .info .shortbio p {
+    font-size: 16px;
+    line-height: 26px; }
+.team-details .temmembername ul li a {
+    color: #232323;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out; }
+.team-details .temmembername ul li a:hover {
+    color: #ee2d50; }
+.team-details .temmembername ul li a.active {
+    color: #ee2d50; }
+.team-details .certificates .title, .team-details .award .title {
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+    color: #232323;
+    margin-bottom: 10px; }
+.team-details .certificates {
+    margin-bottom: 49px;
+    margin-top: 53px; }
+
+/*---------------------------
+Team Details Page Start
+---------------------------*/
+
+.btn:focus, .btn:active, button:focus, button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#image-gallery .modal-footer{
+    display: block;
+}
+
+.my-gallery .thumb {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/*car section*/
+.course-review-list li i {
+    color: #ec4e20;
+}
+
+.btn-area .simple-btn {
+    padding: 15px 35px;
+    background-color: #da1c36;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    padding: 8px 25px;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.btn-area .btn-area a:hover {
+    color: white;
+}
+
+/*car details*/
+.course-details-section .entry-single {
+     margin-top: 0px;
+}
+
+.car-thumb-nav {
+    margin: 15px -7px -7px 0px;
+}
+.car-thumb-nav li {
+    cursor: pointer;
+    width: 120px;
+    height: 100px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 7px 7px;
+}
+
+.tags-widget .tags .widget-tag {
+    background-color: #f8f8f8;
+     text-transform: lowercase;
+    padding: 9px 9px;
+    display: inline-block;
+    font-weight: 500;
+    margin: 3px 2px;
+}
+
+.widget-bottom a {
+    text-align: center;
+    color: var(--main-color-one);
+    text-transform: capitalize;
+    font-weight: 500;
+     margin-left: 0px;
+}
+
+.padding_zero {
+     padding: 0px 0px;
+}
+
+.sights_location{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+
+/*footer*/
+
+.footer-bottom-conetnt {
+    padding: 20px;
+}
+.footer-bottom-conetnt p {
+    margin-top: 5px;
+}
+
+
+.footer-social {
+    float: right;
+}
+.footer-social a {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-left: 8px;
+    display: inline-block;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    background: #fff;
+    color: #333;
+    transition: 0.4s;
+}
+.footer-social a:hover {
+    background: #ec4e20;
+    color: #fff;
+}
+
+@media (max-width: 991px){
+    .footer-bottom-conetnt p {
+        margin-bottom: 15px;
+    }
+    .footer-social {
+        float: none;
+        text-align: center;
+    }
+}
+
+.single-banner .banner-content-area {
+    padding: 120px 0;
+}

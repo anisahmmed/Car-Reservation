@@ -1,0 +1,152 @@
+
+
+:root{
+  --heading-color: #282a2e;
+  --para-color: #282a2e;
+  --main-color-one:  #da1c36 ;
+  --main-color-two: #faa603;
+  --section-bg: #f8f8f8;
+}
+
+
+.btn-color{
+background: #da1c36 !important;
+}
+
+.apply-btn {
+background-color: #da1c36;
+}
+
+.single-item-style-four .icon {
+color: #da1c36;
+}
+
+.single-item-style-four {
+border-bottom: 4px solid #da1c36;
+
+}
+
+.btn-area .simple-btn {
+background-color: #da1c36;
+}
+
+.course-review-list li i {
+color: #da1c36;
+}
+
+.teacher-single {
+border-bottom: 4px solid #da1c36;
+}
+
+.counter-item p:after {
+background-color: #da1c36;
+}
+
+.simple-btn {
+color: #da1c36;
+}
+
+h1>a:hover, h2>a:hover, h3>a:hover, h4>a:hover, h5>a:hover, h6>a:hover {
+color: #da1c36;
+}
+
+.client-details .designation {
+color: #da1c36;
+}
+
+.scroll-to-top {
+background-color: #da1c36;
+}
+
+.client-star {
+color: #da1c36;
+}
+
+.owl-carousel .owl-dot.active {
+background: #da1c36;
+}
+
+.owl-carousel button.owl-dot {
+
+border: 1px solid #da1c36;
+}
+
+.footer-social a:hover {
+background: #da1c36;
+color: #fff;
+}
+
+.header-top select option {
+background: #da1c36;
+border: none;
+}
+
+.subscribe-btn {
+background-color: #da1c36;
+}
+
+#loader {
+
+border-top-color: #da1c36;
+}
+#loader:before {
+
+border-top-color: #da1c36;
+}
+#loader:after {
+
+border-top-color: #da1c36;
+}
+
+.page-list li {
+color: #da1c36;
+}
+
+.cmn-button {
+background-color: #da1c36;
+}
+
+.mission-vission-list li i {
+color: #da1c36;
+}
+
+.widget-title:after {
+background-color: #da1c36;
+}
+
+.tab-area-style-one .nav-tabs .nav-item.show .nav-link, .tab-area-style-one .nav-tabs .nav-link.active {
+border-bottom: 3px solid #da1c36;
+
+}
+
+.tab-area-style-one .nav-tabs .nav-link:hover {
+
+border-bottom: 3px solid #da1c36;
+}
+
+.entry-single-content ul li i {
+color: #da1c36;
+}
+
+.page-item.active .page-link {
+background-color: #da1c36;
+border-color: #da1c36;
+}
+
+.company-info-item .icon {
+color: #da1c36;
+}
+
+.main-menu li a:hover {
+color: #da1c36;
+}
+
+.driver-extra ul li {
+  padding: 10px 0;
+  width: 100%;
+  border-bottom: ;
+}
+
+.driver-extra ul li .driverval {
+float:right;
+}

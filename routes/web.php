@@ -22,6 +22,9 @@ Route::post('/dashboard/car-info/insert','CarController@car_info_insert')->name(
 //Car information
 Route::get('/dashboard/car-info','CarController@car_info')->name('car_info');
 
+//Car deatails
+Route::get('/car-detail/{id}','CarDetailController@car_detail')->name('car_detail');
+
 //car category form
 Route::get('/dashboard/car-category/index','CarCategoryController@index')->name('car_category_index');
 //Category Insert

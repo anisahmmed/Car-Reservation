@@ -28,6 +28,9 @@
                     <input type="text" name="car_name" class="form-control" placeholder="Car Name">
                   </div>
                   <div class="form-group">
+                    <input type="text" name="car_model" class="form-control" placeholder="Car Model">
+                  </div>
+                  <div class="form-group">
                     <select class="form-control" name="car_category">
                       <option class="bg-success text-white">Select Category</option>
                       <option>First Class</option>

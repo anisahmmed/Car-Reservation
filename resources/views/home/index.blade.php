@@ -160,186 +160,39 @@
             </div>
             <div class="section-wrapper">
                 <div class="row mt-mb-15">
+                  @foreach ($all_car_info as $car_info)
                     <div class="col-lg-4 col-sm-6">
-        <div class="course-item">
-            <div class="course-thumb">
-                                <a href="car-details/audi-premium.html"><img src="assets/user/img/car/201909010840_371fc461-593e-4500-8463-5b4857807759.jpg" alt="course-thumb"></a>
-            </div>
-            <div class="course-content">
-                <h5 class="course-title"><a href="car-details/audi-premium.html">Audi Premium</a></h5>
-                <p>When an unknown printer took.
- Lorem Ipsum is simply dummy.
- Text of.</p>
+                      <div class="course-item">
+                        <div class="course-thumb">
+                          <a href="car-details/audi-premium.html"><img src="{{ asset('uploads/car') }}/{{ $car_info->car_scenario }}" alt="{{ $car_info->car_name }}"></a>
+                        </div>
+                        <div class="course-content">
+                          <h5 class="course-title"><a href="car-details/audi-premium.html">{{ $car_info->car_name }}</a></h5>
+                          <p>{{ $car_info->description }}</p>
 
-                <div class="btn-area d-flex justify-content-between">
-                    <a href="car-details/audi-premium.html" class="simple-btn">View
-                        Details</a>
-                    <a href="#" class="simple-btn" data-cid="20" data-toggle="modal"
-                       data-target="#reservation">Rent Now</a>
-                </div>
-            </div>
-            <div class="course-item-bottom">
-                <ul class="course-review-list d-flex">
-                    <li><i class="fa fa-car"></i><span
-                                class="course-love-num">072019</span></li>
-                    <li><i class="fa fa-tachometer"></i><span
-                                class="course-love-num">185km</span></li>
-                    <li><i class="fa fa-sliders"></i><span
-                                class="course-love-num">Audi Prime</span></li>
-                </ul>
-            </div>
-        </div>
-    </div><!-- course-item end -->
-    <div class="col-lg-4 col-sm-6">
-        <div class="course-item">
-            <div class="course-thumb">
-                                <a href="car-details/imperia-automobiles.html"><img src="assets/user/img/car/201907081230_Renault-Trezor-electric-concept-sports-car-HD-picture.jpg" alt="course-thumb"></a>
-            </div>
-            <div class="course-content">
-                <h5 class="course-title"><a href="car-details/imperia-automobiles.html">Imperia Automobiles</a></h5>
-                <p>When an unknown printer took.
-Lorem Ipsum is simply dummy.
-Text of.</p>
+                          <div class="btn-area d-flex justify-content-between">
+                            <a href="{{ url('/car-detail') }}/{{ $car_info->id }}" class="simple-btn">View
+                              Details</a>
+                              <a href="#" class="simple-btn" data-cid="20" data-toggle="modal"
+                              data-target="#reservation">Rent Now</a>
+                            </div>
+                          </div>
+                          <div class="course-item-bottom">
+                            <ul class="course-review-list d-flex">
+                              <li><i class="fa fa-car"></i><span
+                                class="course-love-num">{{ $car_info->chassis_no }}</span></li>
+                                <li><i class="fa fa-tachometer"></i><span
+                                  class="course-love-num">{{ $car_info->car_speed }}</span></li>
+                                  <li><i class="fa fa-sliders"></i><span
+                                    class="course-love-num">{{ $car_info->car_name }}</span></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- course-item end -->
+                  @endforeach
 
-                <div class="btn-area d-flex justify-content-between">
-                    <a href="car-details/imperia-automobiles.html" class="simple-btn">View
-                        Details</a>
-                    <a href="#" class="simple-btn" data-cid="18" data-toggle="modal"
-                       data-target="#reservation">Rent Now</a>
-                </div>
-            </div>
-            <div class="course-item-bottom">
-                <ul class="course-review-list d-flex">
-                    <li><i class="fa fa-car"></i><span
-                                class="course-love-num">3114ib</span></li>
-                    <li><i class="fa fa-tachometer"></i><span
-                                class="course-love-num">39000 KM</span></li>
-                    <li><i class="fa fa-sliders"></i><span
-                                class="course-love-num">Hatchback</span></li>
-                </ul>
-            </div>
-        </div>
-    </div><!-- course-item end -->
-    <div class="col-lg-4 col-sm-6">
-        <div class="course-item">
-            <div class="course-thumb">
-                                <a href="car-details/fabrique-nationale.html"><img src="assets/user/img/car/201907081256_New_Lamborghini_Centenario_2016_Car_HD_Wallpapers.jpg" alt="course-thumb"></a>
-            </div>
-            <div class="course-content">
-                <h5 class="course-title"><a href="car-details/fabrique-nationale.html">Fabrique Nationale</a></h5>
-                <p>When an unknown printer took.
-Lorem Ipsum is simply dummy.
-Text of.</p>
 
-                <div class="btn-area d-flex justify-content-between">
-                    <a href="car-details/fabrique-nationale.html" class="simple-btn">View
-                        Details</a>
-                    <a href="#" class="simple-btn" data-cid="17" data-toggle="modal"
-                       data-target="#reservation">Rent Now</a>
-                </div>
-            </div>
-            <div class="course-item-bottom">
-                <ul class="course-review-list d-flex">
-                    <li><i class="fa fa-car"></i><span
-                                class="course-love-num">9014ib</span></li>
-                    <li><i class="fa fa-tachometer"></i><span
-                                class="course-love-num">39000 KM</span></li>
-                    <li><i class="fa fa-sliders"></i><span
-                                class="course-love-num">Volkswagen</span></li>
-                </ul>
-            </div>
-        </div>
-    </div><!-- course-item end -->
-    <div class="col-lg-4 col-sm-6">
-        <div class="course-item">
-            <div class="course-thumb">
-                                <a href="car-details/tarrant-automobile.html"><img src="assets/user/img/car/201907081250_ferrari-superfast_hp-red-upcoming-car-hd-photos-wallpaper.jpg" alt="course-thumb"></a>
-            </div>
-            <div class="course-content">
-                <h5 class="course-title"><a href="car-details/tarrant-automobile.html">Tarrant Automobile</a></h5>
-                <p>When an unknown printer took.
-Lorem Ipsum is simply dummy.
-Text of.</p>
-
-                <div class="btn-area d-flex justify-content-between">
-                    <a href="car-details/tarrant-automobile.html" class="simple-btn">View
-                        Details</a>
-                    <a href="#" class="simple-btn" data-cid="15" data-toggle="modal"
-                       data-target="#reservation">Rent Now</a>
-                </div>
-            </div>
-            <div class="course-item-bottom">
-                <ul class="course-review-list d-flex">
-                    <li><i class="fa fa-car"></i><span
-                                class="course-love-num">4314ib</span></li>
-                    <li><i class="fa fa-tachometer"></i><span
-                                class="course-love-num">62000 KM</span></li>
-                    <li><i class="fa fa-sliders"></i><span
-                                class="course-love-num">Volkswagen</span></li>
-                </ul>
-            </div>
-        </div>
-    </div><!-- course-item end -->
-    <div class="col-lg-4 col-sm-6">
-        <div class="course-item">
-            <div class="course-thumb">
-                                <a href="car-details/highland-car.html"><img src="assets/user/img/car/201907081218_ebc9479ac2f5fafea4898bf78862c1bf.jpg" alt="course-thumb"></a>
-            </div>
-            <div class="course-content">
-                <h5 class="course-title"><a href="car-details/highland-car.html">Highland Car</a></h5>
-                <p>When an unknown printer took.
-Lorem Ipsum is simply dummy.
-Text of.</p>
-
-                <div class="btn-area d-flex justify-content-between">
-                    <a href="car-details/highland-car.html" class="simple-btn">View
-                        Details</a>
-                    <a href="#" class="simple-btn" data-cid="14" data-toggle="modal"
-                       data-target="#reservation">Rent Now</a>
-                </div>
-            </div>
-            <div class="course-item-bottom">
-                <ul class="course-review-list d-flex">
-                    <li><i class="fa fa-car"></i><span
-                                class="course-love-num">3114ib</span></li>
-                    <li><i class="fa fa-tachometer"></i><span
-                                class="course-love-num">37000 KM</span></li>
-                    <li><i class="fa fa-sliders"></i><span
-                                class="course-love-num">Volkswagen</span></li>
-                </ul>
-            </div>
-        </div>
-    </div><!-- course-item end -->
-    <div class="col-lg-4 col-sm-6">
-        <div class="course-item">
-            <div class="course-thumb">
-                                <a href="car-details/rootes-australia.html"><img src="assets/user/img/car/201907081227_Bugatti_Chiron_era_Super_Car_HD_Wallpapers.jpg" alt="course-thumb"></a>
-            </div>
-            <div class="course-content">
-                <h5 class="course-title"><a href="car-details/rootes-australia.html">Rootes Australia</a></h5>
-                <p>When an unknown printer took.
-Lorem Ipsum is simply dummy.
-Text of.</p>
-
-                <div class="btn-area d-flex justify-content-between">
-                    <a href="car-details/rootes-australia.html" class="simple-btn">View
-                        Details</a>
-                    <a href="#" class="simple-btn" data-cid="13" data-toggle="modal"
-                       data-target="#reservation">Rent Now</a>
-                </div>
-            </div>
-            <div class="course-item-bottom">
-                <ul class="course-review-list d-flex">
-                    <li><i class="fa fa-car"></i><span
-                                class="course-love-num">2014ib</span></li>
-                    <li><i class="fa fa-tachometer"></i><span
-                                class="course-love-num">37000 KM</span></li>
-                    <li><i class="fa fa-sliders"></i><span
-                                class="course-love-num">Hatchback</span></li>
-                </ul>
-            </div>
-        </div>
-    </div><!-- course-item end -->
 
 <div class="modal modal-danger fade" id="reservation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">

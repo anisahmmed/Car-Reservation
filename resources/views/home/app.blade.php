@@ -43,9 +43,9 @@
 <body>
 
 <!-- preloader start -->
-{{-- <div id="preloader">
+<div id="preloader">
     <div id="loader"></div>
-</div> --}}
+</div>
 <!-- preloader end -->
 
 <!--  header-section start  -->
@@ -78,7 +78,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav main-menu ml-auto">
-                        <li><a href="http://rifat636.thesoftking.com/renten">HOME</a></li>
+                        <li><a href="{{ url('/') }}">HOME</a></li>
                         <li><a href="about.html">ABOUT</a></li>
                         <li><a href="cars.html">CARS</a></li>
                         <li><a href="service.html">SERVICE</a></li>

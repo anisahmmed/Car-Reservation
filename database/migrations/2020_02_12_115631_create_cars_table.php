@@ -17,6 +17,7 @@ class CreateCarsTable extends Migration
             $table->bigIncrements('id');
             $table->string('chassis_no')->unique();
             $table->string('car_name');
+            $table->string('car_model');
             $table->string('car_category');
             $table->string('car_speed');
             $table->integer('per_day_cost');

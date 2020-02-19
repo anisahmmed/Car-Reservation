@@ -27,6 +27,7 @@ class CarController extends Controller
       $last_inserted_id = Car::insertGetId([
         'chassis_no' =>$request->chassis_no,
         'car_name' =>$request->car_name,
+        'car_model' =>$request->car_model,
         'car_category' =>$request->car_category,
         'car_speed' =>$request->car_speed,
         'per_day_cost' =>$request->per_day_cost,
@@ -38,7 +39,7 @@ class CarController extends Controller
            $photo_upload     =  $request->car_scenario;
            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
            $photo_name       =  $last_inserted_id . "." . $photo_extension;
-           Image::make($photo_upload)->resize(360,360)->save(base_path('public/uploads/car/'.$photo_name),100);
+           Image::make($photo_upload)->resize(730,408)->save(base_path('public/uploads/car/'.$photo_name),100);
            Car::find($last_inserted_id)->update([
            'car_scenario' => $photo_name,
          ]);

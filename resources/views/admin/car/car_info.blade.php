@@ -20,6 +20,7 @@
                 <th>SL</th>
                 <th>Chassis No</th>
                 <th>Car Name</th>
+                <th>Car Model</th>
                 <th>Car Category</th>
                 <th>Car Speed</th>
                 <th>Per Day Cost</th>
@@ -34,6 +35,7 @@
                   <td>{{ $car_info->id }}</td>
                   <td>{{ $car_info->chassis_no }}</td>
                   <td>{{ $car_info->car_name }}</td>
+                  <td>{{ $car_info->car_model }}</td>
                   <td>{{ $car_info->car_category }}</td>
                   <td>{{ $car_info->car_speed }}</td>
                   <td>{{ $car_info->per_day_cost }} Tk</td>

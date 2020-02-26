@@ -34,6 +34,30 @@ Route::post('/dashboard/car-category/insert','CarCategoryController@insert')->na
 Route::get('/dashboard/car-category-info','CarCategoryController@car_category_info')->name('car_category_info');
 
 
+//Driver Profile
+Route::get('/dashboard/driver/profile','DriverController@driver_profile')->name('driver_profile');
+//Driver Information
+Route::get('/dashboard/driver-info','DriverController@driver_info')->name('driver_info');
+//Edit Driver Information
+Route::get('/dashboard/driver-info/edit/{id}','DriverController@driver_info_edit')->name('driver_info_edit');
+//Driver insert form
+Route::get('/dashboard/driver/index','DriverController@driver_index')->name('driver_index');
+Route::post('/dashboard/driver/insert','DriverController@driver_insert')->name('driver_insert');
+
+
+
+//Register Driver for car
+Route::get('/dashboard/driver-register/index','RegisterDriverController@register_driver')->name('register_driver_index');
+//Register Driver Insert
+Route::post('/dashboard/driver-register/insert','RegisterDriverController@register_driver_insert')->name('register_driver_insert');
+
+//Registered Driver info
+Route::get('/dashboard/registered-driver-info','RegisterDriverController@register_driver_info')->name('register_driver_info');
+
+
+
+//Reservation
+Route::post('/reserve','ReservationController@reservation')->name('reservation');
 
 
 

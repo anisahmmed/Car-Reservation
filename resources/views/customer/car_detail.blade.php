@@ -84,6 +84,10 @@
                                         <p>Per day cost</p>
                                         <p><span>{{ $single_car_info->per_day_cost }} TK</span></p>
                                     </li>
+                                    <li>
+                                        <p>Driver</p>
+                                        <p><span>{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }} </span></p>
+                                    </li>
                                 </ul>
                                 <p class="widget-bottom">
                                     <a href="#" class="cmn-button btn-block text-white" data-cid="20" data-toggle="modal"
@@ -133,26 +137,19 @@
                                                     <div class="reservation-details-area">
 
                                                         <div class="content">
-                                                            <form class="reservation-form" method="post"
-                                                                  action="http://rifat636.thesoftking.com/renten/car-reserve/id">
-                                                                <input type="hidden" name="_token" value="AZLoM14kwMBJtpnpE3rSH1XezLn6653bC7qLnTt8">                                    <div class="content-block">
+                                                            <form class="reservation-form" method="post" action="{{ route('reservation') }}">
+                                                              @csrf
+                                                                <div class="content-block">
                                                                     <h3 class="title m-4 text-center">select duration</h3>
-
-                                                                    <input class="form-control form-control-lg mb-3" type="hidden" name="id"
-                                                                           id="some">
 
                                                                     <div class="row">
                                                                         <div class="form-group col-md-6">
                                                                             <label for="exampleInputEmail1">Pickup Date</label>
-                                                                            <input form-control type='date' name="pickup_date" class='form-control '
-                                                                                   required>
+                                                                            <input type='date' name="pickup_date" class='form-control' required>
                                                                         </div>
-
                                                                         <div class="form-group col-md-6">
                                                                             <label for="exampleInputEmail1">Drop Off Date</label>
-                                                                            <input form-control type='date' name="drop_off_date"
-                                                                                   class='form-control has-icon datepicker-here'
-                                                                                   required>
+                                                                            <input type='date' name="drop_off_date" class='form-control has-icon datepicker-here' required>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -160,19 +157,28 @@
                                                                     <h3 class="title m-4 text-center">personal information</h3>
                                                                     <div class="row">
                                                                         <div class="col-lg-6 form-group">
-                                                                            <input class="form-control" type="text" name="name" placeholder="Name" required>
+                                                                            <input class="form-control" type="text" name="customer_name" value="{{ $customer_name }}" readonly>
                                                                         </div>
                                                                         <div class="col-lg-6 form-group">
-                                                                            <input class="form-control" type="email" name="email" placeholder="Email Address" required>
+                                                                            <input class="form-control" type="email" name="customer_email" value="{{ $customer_email }}" readonly>
                                                                         </div>
                                                                         <div class="col-lg-6 form-group">
-                                                                            <input class="form-control" type="tel" name="phone" placeholder="Phone" required>
+                                                                            <input class="form-control" type="tel" name="customer_phone" placeholder="Phone" required>
                                                                         </div>
                                                                         <div class="col-lg-6 form-group">
                                                                             <input class="form-control" type="text" name="city" placeholder="City" required>
                                                                         </div>
                                                                         <div class="col-lg-12 form-group">
-                                                                            <input class="form-control" type="text" name="address" placeholder="Full Address" required>
+                                                                            <input class="form-control" type="text" name="full_address" placeholder="Full Address" required>
+                                                                        </div>
+                                                                        <div class="col-lg-12 form-group">
+                                                                            <input class="form-control" type="hidden" name="car_model" value="{{ $single_car_info->car_model }}">
+                                                                        </div>
+                                                                        <div class="col-lg-12 form-group">
+                                                                          <input class="form-control" type="hidden" name="driver" value="{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }}">
+                                                                        </div>
+                                                                        <div class="col-lg-12 form-group">
+                                                                            <input class="form-control" type="hidden" name="total_cost" value="{{ $single_car_info->per_day_cost }}">
                                                                         </div>
 
                                                                     </div>

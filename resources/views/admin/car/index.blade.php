@@ -38,6 +38,13 @@
                       <option>Lower Class</option>
                     </select>
                   </div>
+
+
+                  ****Age Calculation code from date of birth****
+                  \Carbon\Carbon::parse($user->birth)->diff(\Carbon\Carbon::now())->format('%y years, %m months and %d days');
+                  ****Age Calculation code from date of birth****
+
+
                   <div class="form-group">
                     <input type="text" name="car_speed" class="form-control" placeholder="Car Speed">
                   </div>

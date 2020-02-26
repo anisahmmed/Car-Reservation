@@ -55,12 +55,39 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-7">
                     <ul class="header-company-contact">
-                        <li><i class="fa fa-phone"></i>+0123 4567 9876
+                        <li><i class="fa fa-phone"></i>01600179287
                         </li>
                         <li>
-                            <i class="fa fa-envelope"></i> software@thesoftking.com
+                            <i class="fa fa-envelope"></i> ashraf@gmail.com
                         </li>
                     </ul>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                  <ul class="header-user-login-regis">
+                    <li>
+                      {{-- @guest
+                      @else
+                      <li><a style="color: #fff;">{{ Auth::user()->name }}</a>
+                          <ul>
+                              <li>
+                                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                              </li>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  @csrf
+                              </form>
+                          </ul>
+                      </li>
+
+                      @endguest --}}
+                      <div class="header-select-list">
+                        <select id="langSel">
+                            <option style="color: black" value="en">English</option>
+                            <option value="bn" style="color: black">বাংলা</option>
+                        </select>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
             </div>
         </div>
@@ -68,7 +95,7 @@
     <div class="header-bottom">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
-                <a class="site-logo site-title" href="http://rifat636.thesoftking.com/renten"><img
+                <a class="site-logo site-title" href="#"><img
                             {{-- src="{{ asset('frontend/assets/user/img/frontEnd/logo.png') }}" alt="site-logo" --}}
                             style="max-width: 210px; max-height: 60px;"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -86,8 +113,24 @@
                         <li><a href="popular-location.html">LOCATION</a></li>
                         <li><a href="blog.html">BLOG</a></li>
                         <li><a href="contact.html">CONTACT</a></li>
-                        <li><a href="{{ route('login_page') }}">LOGIN</a></li>
+                        <li>
+                            <a href="{{ route('login_page') }}">LOGIN</a>
+                        </li>
+                        @guest
+                        @else
+                        <li class="dropdown"><a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">{{ Auth::user()->name }}</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown">
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                </li>
 
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </ul>
+                        </li>
+
+                        @endguest
                     </ul>
                 </div>
             </nav>

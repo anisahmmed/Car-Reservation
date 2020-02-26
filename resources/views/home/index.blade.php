@@ -164,7 +164,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="course-item">
                         <div class="course-thumb">
-                          <a href="car-details/audi-premium.html"><img src="{{ asset('uploads/car') }}/{{ $car_info->car_scenario }}" alt="{{ $car_info->car_name }}"></a>
+                          <a href="{{ url('/car-detail') }}/{{ $car_info->id }}"><img src="{{ asset('uploads/car') }}/{{ $car_info->car_scenario }}" alt="{{ $car_info->car_name }}"></a>
                         </div>
                         <div class="course-content">
                           <h5 class="course-title"><a href="car-details/audi-premium.html">{{ $car_info->car_name }}</a></h5>

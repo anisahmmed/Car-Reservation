@@ -16,12 +16,15 @@ class CreateDriversTable extends Migration
         Schema::create('drivers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('driver_name');
-            $table->integer('driver_contact');
-            $table->string('driver_email')->nullable();
+            $table->string('driver_email')->unique();
+            $table->integer('driver_contact')->nullable();
+            $table->string('driver_image')->nullable();
+            $table->date('birth_date')->nullable();
             $table->string('driver_permanent_address')->nullable();
             $table->string('driver_present_address')->nullable();
-            $table->integer('driver_licence_no');
-            $table->integer('total_trip')->nullable();
+            $table->integer('driver_licence_no')->nullable();
+            $table->integer('experience')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

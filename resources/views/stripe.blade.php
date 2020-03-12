@@ -51,7 +51,9 @@
                                                     data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
                                                     id="payment-form">
                         @csrf
-
+                        <input type="hidden" name="check" value="{{ $check }}">
+                        <input type="hidden" name="customer_phone" value="{{ $customer_phone }}">
+                        <input type="hidden" name="total_price" value="{{ $total_price }}">
                         <div class='form-row row'>
                             <div class='col-xs-12 form-group required'>
                                 <label class='control-label'>Name on Card</label> <input
@@ -94,7 +96,7 @@
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (৳ {{ $total_price }})</button>
                             </div>
                         </div>
 

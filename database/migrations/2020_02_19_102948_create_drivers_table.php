@@ -22,7 +22,7 @@ class CreateDriversTable extends Migration
             $table->date('birth_date')->nullable();
             $table->string('driver_permanent_address')->nullable();
             $table->string('driver_present_address')->nullable();
-            $table->integer('driver_licence_no')->nullable();
+            $table->string('driver_licence_no')->nullable();
             $table->integer('experience')->nullable();
             $table->softDeletes();
             $table->timestamps();

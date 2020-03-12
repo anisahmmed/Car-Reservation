@@ -166,7 +166,7 @@
             <div class="row footer-bottom-conetnt">
                 <div class="col-xl-6">
                     <div class="">
-                        <p>Copyright © 2019 | All Right Reserved</p>
+                        <p>Copyright © 2020 | All Right Reserved</p>
                     </div>
                 </div>
                 <div class="col-xl-6">

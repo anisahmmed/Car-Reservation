@@ -95,6 +95,84 @@
                                 </p>
                             </div>
                             <!-- widget end -->
+                            <div class="modal modal-danger fade" id="reservation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                              <div class="modal-dialog modal-lg" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                          <h4 class="modal-title text-center" id="myModalLabel">Reservation form</h4>
+                                      </div>
+                                      <!-- reservation-section start -->
+
+                                      <div class="container">
+                                          <div class="row">
+                                              <div class="col-lg-12">
+                                                  <div class="reservation-details-area">
+
+                                                      <div class="content">
+                                                        <form class="reservation-form" method="post" action="{{ route('reservation') }}">
+                                                            @csrf
+                                                              <div class="content-block">
+                                                                  <h3 class="title m-4 text-center">select duration</h3>
+
+                                                                  <div class="row">
+                                                                      <div class="form-group col-md-6">
+                                                                          <label for="exampleInputEmail1">Pickup Date</label>
+                                                                          <input type='date' name="pickup_date" class='form-control' required>
+                                                                      </div>
+
+                                                                      <div class="form-group col-md-6">
+                                                                          <label for="exampleInputEmail1">Drop Off Date</label>
+                                                                          <input type='date' name="drop_off_date" class='form-control has-icon datepicker-here' required>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="content-block">
+                                                                  <h3 class="title m-4 text-center">personal information</h3>
+                                                                  <div class="row">
+                                                                      <div class="col-lg-6 form-group">
+                                                                          <input class="form-control" type="text" name="customer_name" value="{{ $customer_name }}" readonly>
+                                                                      </div>
+                                                                      <div class="col-lg-6 form-group">
+                                                                          <input class="form-control" type="email" name="customer_email" value="{{ $customer_email }}" readonly>
+                                                                      </div>
+                                                                      <div class="col-lg-6 form-group">
+                                                                          <input class="form-control" type="tel" name="customer_phone" placeholder="Phone" required>
+                                                                      </div>
+                                                                      <div class="col-lg-6 form-group">
+                                                                          <input class="form-control" type="text" name="city" placeholder="City" required>
+                                                                      </div>
+                                                                      <div class="col-lg-12 form-group">
+                                                                          {{-- <input class="form-control" type="text" name="full_address" placeholder="Full Address" required> --}}
+                                                                          <textarea name="full_address" rows="3" required class="form-control" placeholder="Full Address"></textarea>
+                                                                      </div>
+                                                                      <div class="col-lg-12 form-group">
+                                                                          <input class="form-control" type="hidden" name="car_model" value="{{ $single_car_info->car_model }}">
+                                                                      </div>
+                                                                      <div class="col-lg-12 form-group">
+                                                                        <input class="form-control" type="hidden" name="driver" value="{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }}">
+                                                                      </div>
+                                                                      <div class="col-lg-12 form-group">
+                                                                          <input class="form-control" type="hidden" name="total_cost" value="{{ $single_car_info->per_day_cost }}">
+                                                                      </div>
+
+                                                                  </div>
+                                                              </div>
+
+                                                              <div class="modal-footer" style="border-top: 1px solid #f3f1f1;">
+                                                                  <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                                  <button type="submit" class="btn btn-success">reservation</button>
+                                                              </div>
+                                                          </form>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <!-- reservation-section end -->
+                                  </div>
+                              </div>
+                            </div>
 
                             <div class="widget share-link-widget">
                                 <h5 class="widget-title">Share This Car</h5>
@@ -123,82 +201,7 @@
                                     <img src="../assets/user/img/aads/201907010732_ad1.png" alt="image">
                                 </a>
                             </div>
-                            <div class="modal modal-danger fade" id="reservation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title text-center" id="myModalLabel">Reservation form</h4>
-                                        </div>
-                                        <!-- reservation-section start -->
 
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="reservation-details-area">
-
-                                                        <div class="content">
-                                                            <form class="reservation-form" method="post" action="{{ route('reservation') }}">
-                                                              @csrf
-                                                                <div class="content-block">
-                                                                    <h3 class="title m-4 text-center">select duration</h3>
-
-                                                                    <div class="row">
-                                                                        <div class="form-group col-md-6">
-                                                                            <label for="exampleInputEmail1">Pickup Date</label>
-                                                                            <input type='date' name="pickup_date" class='form-control' required>
-                                                                        </div>
-                                                                        <div class="form-group col-md-6">
-                                                                            <label for="exampleInputEmail1">Drop Off Date</label>
-                                                                            <input type='date' name="drop_off_date" class='form-control has-icon datepicker-here' required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="content-block">
-                                                                    <h3 class="title m-4 text-center">personal information</h3>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-6 form-group">
-                                                                            <input class="form-control" type="text" name="customer_name" value="{{ $customer_name }}" readonly>
-                                                                        </div>
-                                                                        <div class="col-lg-6 form-group">
-                                                                            <input class="form-control" type="email" name="customer_email" value="{{ $customer_email }}" readonly>
-                                                                        </div>
-                                                                        <div class="col-lg-6 form-group">
-                                                                            <input class="form-control" type="tel" name="customer_phone" placeholder="Phone" required>
-                                                                        </div>
-                                                                        <div class="col-lg-6 form-group">
-                                                                            <input class="form-control" type="text" name="city" placeholder="City" required>
-                                                                        </div>
-                                                                        <div class="col-lg-12 form-group">
-                                                                            <input class="form-control" type="text" name="full_address" placeholder="Full Address" required>
-                                                                        </div>
-                                                                        <div class="col-lg-12 form-group">
-                                                                            <input class="form-control" type="hidden" name="car_model" value="{{ $single_car_info->car_model }}">
-                                                                        </div>
-                                                                        <div class="col-lg-12 form-group">
-                                                                          <input class="form-control" type="hidden" name="driver" value="{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }}">
-                                                                        </div>
-                                                                        <div class="col-lg-12 form-group">
-                                                                            <input class="form-control" type="hidden" name="total_cost" value="{{ $single_car_info->per_day_cost }}">
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="modal-footer" style="border-top: 1px solid #f3f1f1;">
-                                                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel                                        </button>
-                                                                    <button type="submit" class="btn btn-success">reservation</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- reservation-section end -->
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
             </div>

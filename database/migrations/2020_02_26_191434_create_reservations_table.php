@@ -25,6 +25,7 @@ class CreateReservationsTable extends Migration
             $table->string('car_model');
             $table->string('driver');
             $table->integer('total_cost');
+            $table->integer('payment_status');
             $table->softDeletes();
             $table->timestamps();
         });

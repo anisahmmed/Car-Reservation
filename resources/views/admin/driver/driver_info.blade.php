@@ -40,7 +40,7 @@
                   <td>{{ $driver->driver_name }}</td>
                   <td>{{ $driver->driver_email }}</td>
                   <td>{{ $driver->driver_contact }}</td>
-                  <td><img style="height:55px;width:50px;" src="{{ asset('/uploads/car') }}/" alt="df" /></td>
+                  <td><img style="height:55px;width:50px;" src="{{ asset('/uploads/driver') }}/{{ $driver->driver_image }}" alt="{{ $driver->driver_name }}" /></td>
                   <td>{{ $driver->birth_date }}</td>
                   <td>{{ $driver->driver_permanent_address }}</td>
                   <td>{{ $driver->driver_present_address }}</td>

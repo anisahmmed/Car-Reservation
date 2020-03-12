@@ -288,85 +288,25 @@
             </div>
             <div class="section-wrapper">
                 <div class="teacher-slider-one owl-carousel">
-                                            <div class="teacher-single text-center">
-                                <div class="teacher-thumb">
-                                    <img src="assets/user/img/driver/201908191109_car-driver-passenger-ss-1920.jpg"
-                                         alt="teacher-image">
-                                </div>
-                                <div class="teacher-content">
-                                    <h4 class="teacher-name"><a
-                                                href="drivers/10.html">William son</a>
-                                    </h4>
-                                    <span class="teacher-designation">Experience: 10 years</span><br>
-                                    <span class="teacher-designation">Age: 28</span>
-                                </div>
-                            </div><!-- teacher-single end-->
-                                            <div class="teacher-single text-center">
-                                <div class="teacher-thumb">
-                                    <img src="assets/user/img/driver/201908191136_blog_woman_car_vm.jpg"
-                                         alt="teacher-image">
-                                </div>
-                                <div class="teacher-content">
-                                    <h4 class="teacher-name"><a
-                                                href="drivers/9.html">bil kasaka</a>
-                                    </h4>
-                                    <span class="teacher-designation">Experience: 6 years</span><br>
-                                    <span class="teacher-designation">Age: 35</span>
-                                </div>
-                            </div><!-- teacher-single end-->
-                                            <div class="teacher-single text-center">
-                                <div class="teacher-thumb">
-                                    <img src="assets/user/img/driver/201908191152_man-flashy-car.jpg"
-                                         alt="teacher-image">
-                                </div>
-                                <div class="teacher-content">
-                                    <h4 class="teacher-name"><a
-                                                href="drivers/8.html">Rock Blight</a>
-                                    </h4>
-                                    <span class="teacher-designation">Experience: 5 years</span><br>
-                                    <span class="teacher-designation">Age: 25</span>
-                                </div>
-                            </div><!-- teacher-single end-->
-                                            <div class="teacher-single text-center">
-                                <div class="teacher-thumb">
-                                    <img src="assets/user/img/driver/201908191032_36065012-teenage-girl-with-her-driver-s-license-driving-a-new-car-and-holding-keys-.jpg"
-                                         alt="teacher-image">
-                                </div>
-                                <div class="teacher-content">
-                                    <h4 class="teacher-name"><a
-                                                href="drivers/7.html">Abigail Emily</a>
-                                    </h4>
-                                    <span class="teacher-designation">Experience: 6 years</span><br>
-                                    <span class="teacher-designation">Age: 30</span>
-                                </div>
-                            </div><!-- teacher-single end-->
-                                            <div class="teacher-single text-center">
-                                <div class="teacher-thumb">
-                                    <img src="assets/user/img/driver/201908190650_driving-practice.jpg"
-                                         alt="teacher-image">
-                                </div>
-                                <div class="teacher-content">
-                                    <h4 class="teacher-name"><a
-                                                href="drivers/6.html">Olivia Isabella</a>
-                                    </h4>
-                                    <span class="teacher-designation">Experience: 5 years</span><br>
-                                    <span class="teacher-designation">Age: 25</span>
-                                </div>
-                            </div><!-- teacher-single end-->
-                                            <div class="teacher-single text-center">
-                                <div class="teacher-thumb">
-                                    <img src="assets/user/img/driver/201908190639_businessman-driving.jpg"
-                                         alt="teacher-image">
-                                </div>
-                                <div class="teacher-content">
-                                    <h4 class="teacher-name"><a
-                                                href="drivers/5.html">smith john</a>
-                                    </h4>
-                                    <span class="teacher-designation">Experience: 10 years</span><br>
-                                    <span class="teacher-designation">Age: 32</span>
-                                </div>
-                            </div><!-- teacher-single end-->
-                                    </div>
+
+                @foreach ($all_driver_info as $driver_info)
+                  <div class="teacher-single text-center">
+                    <div class="teacher-thumb">
+                      <img src="#"
+                      alt="{{ $driver_info->driver_name }}">
+                    </div>
+                    <div class="teacher-content">
+                      <h4 class="teacher-name"><a
+                        href="{{ url('/driver-detail') }}/{{ $driver_info->id }}">{{ $driver_info->driver_name }}</a>
+                      </h4>
+                      <span class="teacher-designation">Experience: {{ $driver_info->experience }}</span><br>
+                      <span class="teacher-designation">Age: {{ $driver_info->birth_date }}</span>
+                    </div>
+                  </div>
+                  <!-- teacher-single end-->
+                  @endforeach
+
+                </div>
             </div>
         </div>
     </section>
@@ -386,28 +326,28 @@
             </div>
             <div class="section-wrapper">
                 <div class="row">
-                                            <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-6">
                             <div class="counter-item text-center">
                                 <i class="fas fa-car"></i>
                                 <p>Total Car</p>
-                                <span class="counter">5466</span><span>+</span>
+                                <span class="counter">{{ $all_car_info->count() }}</span><span>+</span>
                             </div>
                         </div><!-- counter-item end -->
-                                            <div class="col-lg-3 col-6">
+                          <div class="col-lg-3 col-6">
                             <div class="counter-item text-center">
                                 <i class="fas fa-user"></i>
                                 <p>Happy Customer</p>
-                                <span class="counter">6578</span><span>+</span>
+                                <span class="counter">{{ $all_user->count() }}</span><span>+</span>
                             </div>
                         </div><!-- counter-item end -->
-                                            <div class="col-lg-3 col-6">
+                          <div class="col-lg-3 col-6">
                             <div class="counter-item text-center">
                                 <i class="fas fa-clock"></i>
                                 <p>Travel Time</p>
                                 <span class="counter">5466</span><span>+</span>
                             </div>
                         </div><!-- counter-item end -->
-                                            <div class="col-lg-3 col-6">
+                          <div class="col-lg-3 col-6">
                             <div class="counter-item text-center">
                                 <i class="fas fa-check"></i>
                                 <p>Solution</p>

@@ -25,6 +25,8 @@ Route::get('/dashboard/car-info','CarController@car_info')->name('car_info');
 //Car deatails
 Route::get('/car-detail/{id}','CarDetailController@car_detail')->name('car_detail');
 
+//Driver Details
+Route::get('/driver-detail/{id}','DriverController@driver_detail')->name('driver_detail');
 //car category form
 Route::get('/dashboard/car-category/index','CarCategoryController@index')->name('car_category_index');
 //Category Insert
@@ -35,14 +37,14 @@ Route::get('/dashboard/car-category-info','CarCategoryController@car_category_in
 
 
 //Driver Profile
-Route::get('/dashboard/driver/profile','DriverController@driver_profile')->name('driver_profile');
+Route::get('/dashboard/driver/profile','AdminController@driver_profile')->name('driver_profile');
 //Driver Information
-Route::get('/dashboard/driver-info','DriverController@driver_info')->name('driver_info');
+Route::get('/dashboard/driver-info','AdminController@driver_info')->name('driver_info');
 //Edit Driver Information
-Route::get('/dashboard/driver-info/edit/{id}','DriverController@driver_info_edit')->name('driver_info_edit');
+Route::get('/dashboard/driver-info/edit/{id}','AdminController@driver_info_edit')->name('driver_info_edit');
 //Driver insert form
-Route::get('/dashboard/driver/index','DriverController@driver_index')->name('driver_index');
-Route::post('/dashboard/driver/insert','DriverController@driver_insert')->name('driver_insert');
+Route::get('/dashboard/driver/index','AdminController@driver_index')->name('driver_index');
+Route::post('/dashboard/driver/insert','AdminController@driver_insert')->name('driver_insert');
 
 
 
@@ -60,6 +62,23 @@ Route::get('/dashboard/registered-driver-info','RegisterDriverController@registe
 Route::post('/reserve','ReservationController@reservation')->name('reservation');
 
 
+//Customer Index
+Route::get('/customer/index','PassengerController@passenger_index')->name('customer_index');
+
+//single car
+// Route::get('/customer/index/car/{id}','PassengerController@car_info')->name('car_info');
+
+
+//Driver Index
+Route::get('/driver/index-page','DriversController@driver_index')->name('driver_index_page');
+//Edit Driver Info
+Route::post('/driver-info/update','DriversController@driver_info_update')->name('driver_info_update');
+
+
+
+//Stripe
+Route::get('stripe', 'StripePaymentController@stripe');
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
 
 
 

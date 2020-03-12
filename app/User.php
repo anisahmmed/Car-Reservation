@@ -11,7 +11,10 @@ class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
-
+    // function __construct()
+    // {
+    //   $this->middleware('check_role');
+    // }
     /**
      * The attributes that are mass assignable.
      *

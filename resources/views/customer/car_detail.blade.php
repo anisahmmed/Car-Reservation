@@ -160,7 +160,7 @@
 
                                                               <div class="modal-footer" style="border-top: 1px solid #f3f1f1;">
                                                                   <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                                                  <button type="submit" class="btn btn-success">reservation</button>
+                                                                  <button type="submit" class="btn btn-success">Reserve</button>
                                                               </div>
                                                           </form>
                                                       </div>

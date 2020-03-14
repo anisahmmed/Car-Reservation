@@ -71,10 +71,12 @@
                                         <span class="course-love-num">{{ $driver_infos->driver_contact }}</span>
                                     </p>
                                 </li>
-
+                                @php
+                                  $years = \Carbon\Carbon::parse($driver_infos->birth_date)->age;
+                                @endphp
                                 <li>
                                     <p>Age</p>
-                                    <p><span class="course-love-num">{{ $driver_infos->birth_date }}</span></p>
+                                    <p><span class="course-love-num">{{ $years }}</span></p>
                                 </li>
                                 <li>
                                     <p>Permanent Address</p>

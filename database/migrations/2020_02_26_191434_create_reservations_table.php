@@ -15,8 +15,6 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('pickup_date');
-            $table->date('drop_off_date');
             $table->string('customer_name');
             $table->string('customer_email');
             $table->integer('customer_phone');
@@ -24,6 +22,7 @@ class CreateReservationsTable extends Migration
             $table->longText('full_address');
             $table->string('car_model');
             $table->string('driver');
+            $table->integer('duration');
             $table->integer('total_cost');
             $table->integer('payment_status');
             $table->softDeletes();

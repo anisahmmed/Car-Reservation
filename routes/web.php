@@ -60,6 +60,12 @@ Route::get('/dashboard/registered-driver-info','RegisterDriverController@registe
 
 //Reservation
 Route::post('/reserve','ReservationController@reservation')->name('reservation');
+//Confirm Reserve
+Route::post('/confirm-reserve','ReservationController@confirm_reserve')->name('confirm_reserve');
+
+//Reserve Detail
+Route::get('/reserve/detail','ReservationController@reserve_detail')->name('reserve_detail');
+
 
 
 //Customer Index

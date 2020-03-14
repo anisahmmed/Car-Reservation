@@ -10,9 +10,14 @@ class ReservationController extends Controller
 {
     function reservation(Request $request)
     {
+      $reserve_detail = $request;
+      return view('customer.reserve_detail',compact('reserve_detail'));
+    }
+
+    //Confirm Reserve
+    function confirm_reserve(Request $request)
+    {
       $check = Reservation::insert([
-        'pickup_date' =>$request->pickup_date,
-        'drop_off_date' =>$request->drop_off_date,
         'customer_name' =>$request->customer_name,
         'customer_email' =>$request->customer_email,
         'customer_phone' =>$request->customer_phone,
@@ -20,6 +25,7 @@ class ReservationController extends Controller
         'full_address' =>$request->full_address,
         'car_model' =>$request->car_model,
         'driver' =>$request->driver,
+        'duration' =>$request->duration,
         'total_cost' =>$request->total_cost,
         'payment_status' =>0,
         'created_at' =>Carbon::now(),
@@ -33,4 +39,20 @@ class ReservationController extends Controller
         echo "Fail";
       }
     }
+
+    //Reserve Detail
+    function reserve_detail()
+    {
+      return view('customer.reserve_detail');
+    }
+    // $fdate=$request->Fdate;
+    // $tdate=$request->Tdate;
+    //
+    // $to = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $fdate);
+    // $from = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $tdate);
+    // $diff_in_days = $to->diffInDays($from);
+    // dd($diff_in_days);
+
+
+//END
 }

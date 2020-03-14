@@ -7,6 +7,7 @@ use App\Driver;
 use App\User;
 use Auth;
 use Image;
+use Carbon\Carbon;
 
 class DriversController extends Controller
 {
@@ -33,6 +34,7 @@ class DriversController extends Controller
     //Driver Info Update
     function driver_info_update(Request $request)
     {
+
        Driver::findOrFail($request->id)->update([
         'driver_image' =>$request->driver_image,
         'driver_contact' =>$request->driver_contact,

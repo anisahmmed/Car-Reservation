@@ -53,6 +53,7 @@ class DriversController extends Controller
            'driver_image' => $photo_name,
          ]);
        }
+       alert()->success('Profile Updated!');
       return redirect(route('driver_index_page'));
     }
 }

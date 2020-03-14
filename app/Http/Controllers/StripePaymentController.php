@@ -37,7 +37,7 @@ class StripePaymentController extends Controller
           'payment_status' =>1,
         ]);
 
-        Session::flash('success', 'Payment successful!');
+        alert()->success('Successfully Reserved!');
 
         return redirect(route('customer_index'));
     }

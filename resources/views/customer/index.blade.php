@@ -87,8 +87,8 @@
                         <div class="btn-area d-flex justify-content-between">
                           <a href="{{ url('/car-detail') }}/{{ $car_info->id }}" class="simple-btn">View
                             Details</a>
-                            <a href="#" class="simple-btn" data-cid="20" data-toggle="modal"
-                            data-target="#reservation">Rent Now</a>
+                            {{-- <a href="#" class="simple-btn" data-cid="20" data-toggle="modal"
+                            data-target="#reservation">Rent Now</a> --}}
                         </div>
                       </div>
                       <div class="course-item-bottom">

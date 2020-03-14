@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Driver;
+use Alert;
 
 class AdminController extends Controller
 {
@@ -61,6 +62,7 @@ class AdminController extends Controller
             'driver_email' =>$request->driver_email,
           ]);
         }
+        alert()->success('Driver Information','Added Successfully!');
         return redirect(route('driver_info'));
       }
 

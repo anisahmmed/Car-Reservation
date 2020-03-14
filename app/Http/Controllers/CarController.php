@@ -44,6 +44,7 @@ class CarController extends Controller
            'car_scenario' => $photo_name,
          ]);
        }
+       alert()->success('Car Information','Added Successfully!');
       return redirect(route('car_info'));
     }
 }

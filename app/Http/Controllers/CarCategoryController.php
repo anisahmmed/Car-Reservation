@@ -24,6 +24,7 @@ class CarCategoryController extends Controller
       CarCategory::insert([
         'category_name' =>$request->category_name,
       ]);
+      alert()->success('Car Category','Added Successfully!');
       return redirect(route('car_category_info'));
     }
 

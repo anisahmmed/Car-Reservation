@@ -24,6 +24,8 @@
 
 </head>
 
+
+
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -373,6 +375,7 @@
         </div>
       </div>
     </div>
+    @include('sweetalert::alert')
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('admin_assets/vendor/jquery/jquery.min.js') }}"></script>

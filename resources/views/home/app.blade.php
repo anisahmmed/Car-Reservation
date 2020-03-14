@@ -190,6 +190,8 @@
       </span>
 </div>
 <!-- scroll-to-top end -->
+@include('sweetalert::alert')
+
 
 
 <!-- jquery js link -->

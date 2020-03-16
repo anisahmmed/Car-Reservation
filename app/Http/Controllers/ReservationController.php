@@ -25,6 +25,7 @@ class ReservationController extends Controller
         'full_address' =>$request->full_address,
         'car_model' =>$request->car_model,
         'driver' =>$request->driver,
+        'driver_email' =>$request->driver_email,
         'duration' =>$request->duration,
         'total_cost' =>$request->total_cost,
         'payment_status' =>0,

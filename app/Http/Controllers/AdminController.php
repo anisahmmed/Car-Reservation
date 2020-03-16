@@ -78,4 +78,55 @@ class AdminController extends Controller
       {
         return view('admin.driver.driver_profile');
       }
+
+      //User Information
+      function user_info()
+      {
+        $all_user_info = User::all();
+        return view('admin.users.user_info',compact('all_user_info'));
+      }
+      //User Information Edit
+      function user_info_edit($id)
+      {
+        $single_user_info = User::findOrFail($id);
+        return view('admin.users.edit_user',compact('single_user_info'));
+      }
+
+      //Update USer information
+      function user_info_update(Request $request)
+      {
+        $check = User::findOrFail($request->id)->update([
+          'name' =>$request->name,
+          'email' =>$request->email,
+          'status_id' =>$request->user_status,
+        ]);
+
+        // if ($check) {
+        //   Driver::findOrFail($request->id)->update([
+        //     'name' =>$request->name,
+        //     'email' =>$request->email,
+        //   ]);
+        // }
+        alert::success('User Information','Updated Successfully!');
+        return redirect(route('user_info'));
+      }
+
+      //Add New User
+      function new_user()
+      {
+        return view('admin.users.add_user');
+      }
+      //New User Insert
+      function new_user_insert(Request $request)
+      {
+        $check = User::insert([
+          'name' =>$request->name,
+          'email' =>$request->email,
+          'password' =>Hash::make($request->email),
+          'status_id' =>1,
+          'role_id' =>$request->user_role,
+        ]);
+        alert::success('User','Created Successfully!');
+        return redirect(route('user_info'));
+      }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Driver;
 use App\User;
+use App\Reservation;
 use Auth;
 use Image;
 use Carbon\Carbon;
@@ -57,5 +58,12 @@ class DriversController extends Controller
        }
        alert()->success('Profile Updated!');
       return redirect(route('driver_index_page'));
+    }
+
+    //Driver Trip Information
+    function trip_info()
+    {
+      $trip_info = Reservation::all();
+      return view('drivers.trip_info',compact('trip_info'));
     }
 }

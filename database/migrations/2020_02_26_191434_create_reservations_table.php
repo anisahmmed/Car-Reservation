@@ -22,6 +22,7 @@ class CreateReservationsTable extends Migration
             $table->longText('full_address');
             $table->string('car_model');
             $table->string('driver');
+            $table->string('driver_email');
             $table->integer('duration');
             $table->integer('total_cost');
             $table->integer('payment_status');

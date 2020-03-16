@@ -57,6 +57,9 @@
                           <input class="form-control" type="hidden" name="driver" value="{{ $reserve_detail->driver }}" readonly>
                         </div>
                         <div class="col-lg-6 form-group">
+                          <input class="form-control" type="hidden" name="driver_email" value="{{ $reserve_detail->driver_email }}" readonly>
+                        </div>
+                        <div class="col-lg-6 form-group">
                           <button type="submit" class="btn btn-success">Confirm Reserve</button>
                         </div>
 

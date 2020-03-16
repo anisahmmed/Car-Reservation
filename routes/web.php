@@ -36,6 +36,17 @@ Route::post('/dashboard/car-category/insert','CarCategoryController@insert')->na
 Route::get('/dashboard/car-category-info','CarCategoryController@car_category_info')->name('car_category_info');
 
 
+//User Information
+Route::get('/dashboard/user-info','AdminController@user_info')->name('user_info');
+//Edit User Information
+Route::get('/dashboard/user-info/edit/{id}','AdminController@user_info_edit')->name('user_info_edit');
+//Update User Information
+Route::post('/dashboard/user-info/update','AdminController@user_info_update')->name('user_info_update');
+//Add new User index
+Route::get('/dashboard/add-new-user/index','AdminController@new_user')->name('new_user');
+//Add new User insert
+Route::post('/dashboard/add-new-user/insert','AdminController@new_user_insert')->name('new_user_insert');
+
 //Driver Profile
 Route::get('/dashboard/driver/profile','AdminController@driver_profile')->name('driver_profile');
 //Driver Information
@@ -74,12 +85,13 @@ Route::get('/customer/index','PassengerController@passenger_index')->name('custo
 //single car
 // Route::get('/customer/index/car/{id}','PassengerController@car_info')->name('car_info');
 
-
+Route::get('/driver-email/{drivre_id}','RegisterDriverController@driver_email')->name('driver_email');
 //Driver Index
 Route::get('/driver/index-page','DriversController@driver_index')->name('driver_index_page');
 //Edit Driver Info
-Route::post('/driver-info/update','DriversController@driver_info_update')->name('driver_info_update');
-
+Route::post('/driver-profile/update','DriversController@driver_info_update')->name('driver_info_update');
+//Driver Trip Information
+Route::get('/driver/trip-info','DriversController@trip_info')->name('trip_info');
 
 
 //Stripe

@@ -17,6 +17,7 @@ class CreateRegisterDriversTable extends Migration
             $table->bigIncrements('id');
             $table->integer('car_model_id');
             $table->integer('driver_name_id');
+            $table->string('driver_email_id');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -12,7 +12,7 @@
             <h2 class="section-title">Profile</h2>
           </div>
           <div class="col-lg-2">
-              <a href="#" class="btn btn-info">View Trip Info</a>
+              <a href="{{ route('trip_info') }}" class="btn btn-info">View Trip Info</a>
           </div>
         </div>
       </div>

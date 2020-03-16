@@ -152,6 +152,9 @@
                                                                         <input class="form-control" type="hidden" name="driver" value="{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }}">
                                                                       </div>
                                                                       <div class="col-lg-12 form-group">
+                                                                        <input class="form-control" type="hidden" name="driver_email" value="{{ $all_registered_driver->driver_email_id }}">
+                                                                      </div>
+                                                                      <div class="col-lg-12 form-group">
                                                                           <input class="form-control" type="hidden" name="total_cost" value="{{ $single_car_info->per_day_cost }}">
                                                                       </div>
 

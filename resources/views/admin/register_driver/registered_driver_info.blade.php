@@ -20,6 +20,7 @@
                 <th>SL</th>
                 <th>Car Name</th>
                 <th>Driver Name</th>
+                <th>Driver Email</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -32,6 +33,7 @@
                   <td>{{ $sl++ }}</td>
                   <td>{{ App\Car::findOrFail($registered_driver->car_model_id)->car_name }}</td>
                   <td>{{ App\Driver::findOrFail($registered_driver->driver_name_id)->driver_name }}</td>
+                  <td>{{ $registered_driver->driver_email_id }}</td>
                   <td>
                     <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i>Edit</a>
                     <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"> </i>Delete</a>

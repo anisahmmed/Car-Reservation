@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Car;
 use App\Driver;
 use App\RegisterDriver;
@@ -29,7 +30,17 @@ class RegisterDriverController extends Controller
       RegisterDriver::insert([
         'car_model_id' =>$request->car_name_id,
         'driver_name_id' =>$request->driver_name_id,
+        'driver_email_id' =>$request->driver_email_id,
       ]);
+      alert()->success('Register Driver Information','Registered Successfully!');
       return redirect(route('register_driver_info'));
+    }
+    function driver_email($driver_id)
+    {
+      $driver_email = Driver::findOrFail($driver_id);
+      $data = [
+        'driver_email' =>$driver_email,
+      ];
+       return $driver_email->toJson();
     }
 }

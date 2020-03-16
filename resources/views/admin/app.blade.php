@@ -70,7 +70,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="{{ route('car_info') }}">Car Information</a>
-            <a class="collapse-item" href="{{ route('car_category_info') }}">User</a>
+            <a class="collapse-item" href="{{ route('car_category_info') }}">Car Category</a>
             <a class="collapse-item" href="{{ route('register_driver_info') }}">Register Driver for Car</a>
             {{-- <a class="collapse-item" href="{{ route('addressline_info') }}">AddressLine Info</a> --}}
           </div>
@@ -86,6 +86,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">User Utilities:</h6>
+            <a class="collapse-item" href="{{ route('user_info') }}">User Information</a>
             <a class="collapse-item" href="{{ route('driver_info') }}">Driver Information</a>
           </div>
         </div>
@@ -103,18 +104,12 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>Rent</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
+            <h6 class="collapse-header">Rent Information:</h6>
+            <a class="collapse-item" href="#">Reserve Information</a>
           </div>
         </div>
       </li>
@@ -376,8 +371,12 @@
       </div>
     </div>
     @include('sweetalert::alert')
-
+@yield('script')
     <!-- Bootstrap core JavaScript-->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
     <script src="{{ asset('admin_assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -396,7 +395,20 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('admin_assets/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('admin_assets/js/demo/chart-pie-demo.js') }}"></script>
+      <script type="text/javascript">
+        $('#driver_id').on('change', function(){
+          var driver_id = $('#driver_id').val();
+          $.ajax({
+            url:'/driver-email/'+driver_id,
+            dataType: 'json',
+            success : function(data){
+              console.log(data);
+              $('#driver_email').val(data.driver_email).change();
+            }
+          });
+        });
 
+      </script>
   </body>
 
   </html>

@@ -117,12 +117,12 @@
                                                                   <div class="row">
                                                                       <div class="form-group col-md-6">
                                                                           <label for="exampleInputEmail1">Pickup Date</label>
-                                                                          <input type='date' name="pickup_date" class='form-control' required>
+                                                                          <input type='text' id="pickupdate" name="pickup_date" class='form-control' required>
                                                                       </div>
 
                                                                       <div class="form-group col-md-6">
                                                                           <label for="exampleInputEmail1">Drop Off Date</label>
-                                                                          <input type='date' name="drop_off_date" class='form-control has-icon datepicker-here' required>
+                                                                          <input type='text' id="dropoffdate" name="drop_off_date" class='form-control' required>
                                                                       </div>
                                                                   </div>
                                                               </div>

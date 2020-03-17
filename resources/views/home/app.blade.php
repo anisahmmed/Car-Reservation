@@ -30,8 +30,8 @@
     <!-- responsive css link -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/user/css/responsive.css') }}">
 
-
-    <script src="{{ asset('frontend/assets/admin/js/jquery-2.1.1.min.js') }}"></script>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+             rel = "stylesheet">
     <link href="{{ asset('frontend/assets/admin/css/toastr.css') }}" rel="stylesheet"/>
     <script src="{{ asset('frontend/assets/admin/js/toastr.js') }}"></script>
 
@@ -195,6 +195,7 @@
 
 
 <!-- jquery js link -->
+<script src="{{ asset('frontend/assets/admin/js/jquery-2.1.1.min.js') }}"></script>
 <script src="{{ asset('frontend/assets/user/js/jquery-3.3.1.min.js') }}"></script>
 <!-- bootstrap js link -->
 <script src="{{ asset('frontend/assets/user/js/bootstrap.bundle.js') }}"></script>
@@ -220,10 +221,20 @@
 <script src="{{ asset('frontend/assets/user/js/sweet.js') }}"></script>
 
 
-<script>
-
-
-  </script>
+<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script language="javascript">
+    $(document).ready(function () {
+        $("#pickupdate").datepicker({
+            minDate: 0
+        });
+    });
+    $(document).ready(function () {
+        $("#dropoffdate").datepicker({
+            minDate: 0
+        });
+    });
+</script>
 
 
 <script>

@@ -86,9 +86,88 @@
                                     </li>
                                     <li>
                                         <p>Driver</p>
-                                        <p><span>{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }} </span></p>
+                                        <p>
+                                          <a href="#" data-cid="20" data-toggle="modal"
+                                             data-target="#driver_profile">{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }}</a>
+                                        </p>
+                                        {{-- <p><span>{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }} </span></p> --}}
                                     </li>
                                 </ul>
+
+
+                                @foreach ($all_driver_info as $driver_info)
+                                  @if ($driver_info->driver_email == $all_registered_driver->driver_email_id)
+
+
+
+
+
+                                <!--Driver Profile start-->
+                                <div class="modal modal-danger fade" id="driver_profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h4 class="modal-title text-center" id="myModalLabel">Driver Profile</h4>
+                                          </div>
+                                          <!-- reservation-section start -->
+
+                                          <div class="container">
+                                              <div class="row">
+                                                  <div class="col-lg-12">
+                                                      <div class="reservation-details-area">
+
+                                                          <div class="content">
+                                                                  <div class="content-block">
+                                                                      <img style="height: 250px; width: 250px; background-position: center;" src="{{ asset('uploads/driver') }}/{{ $driver_info->driver_image }}" alt="{{ $driver_info->driver_name }}">
+                                                                  </div>
+                                                                  <div class="content-block">
+                                                                      <h3 class="title m-4 text-center">Personal Information</h3>
+                                                                      <div class="row">
+                                                                          <div class="col-lg-6">
+                                                                            <label for=""><b>Driver Name:</b> {{ $driver_info->driver_name }}</label>
+                                                                          </div>
+                                                                          <div class="col-lg-6">
+                                                                            <label for=""><b>Email:</b> {{ $driver_info->driver_email }}</label>
+                                                                          </div>
+                                                                          <div class="col-lg-6">
+                                                                            <label for=""><b>Contact:</b> {{ $driver_info->driver_contact }}</label>
+                                                                          </div>
+                                                                          <div class="col-lg-6">
+                                                                            <label for=""><b>Age:</b> {{ \Carbon\Carbon::parse($driver_info->birth_date)->age }}</label>
+                                                                          </div>
+                                                                          <div class="col-lg-6">
+                                                                            <label for=""><b>Experience:</b> {{ $driver_info->experience }}</label>
+                                                                          </div>
+                                                                          <div class="col-lg-6">
+                                                                            <label for=""><b>Driving License Number:</b> {{ $driver_info->driver_licence_no }}</label>
+                                                                          </div>
+                                                                          <div class="col-lg-6">
+                                                                            <label for=""><b>Present Address:</b> {{ $driver_info->driver_present_address }}</label>
+                                                                          </div>
+                                                                          <div class="col-lg-6">
+                                                                            <label for=""><b>Permanent Address:</b> {{ $driver_info->driver_permanent_address }}</label>
+                                                                          </div>
+
+                                                                      </div>
+                                                                  </div>
+
+                                                                  <div class="modal-footer" style="border-top: 1px solid #f3f1f1;">
+                                                                      <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                  </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- reservation-section end -->
+                                      </div>
+                                  </div>
+                                </div>
+                                <!--Driver Profile end-->
+                                @endif
+                                @endforeach
+
                                 <p class="widget-bottom">
                                     <a href="#" class="cmn-button btn-block text-white" data-cid="20" data-toggle="modal"
                                        data-target="#reservation">Reserve now</a>
@@ -143,7 +222,7 @@
                                                                       </div>
                                                                       <div class="col-lg-12 form-group">
                                                                           {{-- <input class="form-control" type="text" name="full_address" placeholder="Full Address" required> --}}
-                                                                          <textarea name="full_address" rows="3" required class="form-control" placeholder="Full Address"></textarea>
+                                                                          <textarea name="full_address" rows="3" required class="form-control" placeholder="Full Address" required></textarea>
                                                                       </div>
                                                                       <div class="col-lg-12 form-group">
                                                                           <input class="form-control" type="hidden" name="car_model" value="{{ $single_car_info->car_model }}">

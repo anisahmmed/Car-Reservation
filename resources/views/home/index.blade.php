@@ -292,7 +292,7 @@
                 @foreach ($all_driver_info as $driver_info)
                   <div class="teacher-single text-center">
                     <div class="teacher-thumb">
-                      <img src="#"
+                      <img src="{{ asset('uploads/driver') }}/{{ $driver_info->driver_image }}"
                       alt="{{ $driver_info->driver_name }}">
                     </div>
                     <div class="teacher-content">
@@ -300,7 +300,7 @@
                         href="{{ url('/driver-detail') }}/{{ $driver_info->id }}">{{ $driver_info->driver_name }}</a>
                       </h4>
                       <span class="teacher-designation">Experience: {{ $driver_info->experience }}</span><br>
-                      <span class="teacher-designation">Age: {{ $driver_info->birth_date }}</span>
+                      <span class="teacher-designation">Age: {{ \Carbon\Carbon::parse($driver_info->birth_date)->age }}</span>
                     </div>
                   </div>
                   <!-- teacher-single end-->

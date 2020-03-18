@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Car;
 use App\RegisterDriver;
 use App\User;
+use App\Driver;
 use Auth;
 
 class CarDetailController extends Controller
@@ -21,6 +22,7 @@ class CarDetailController extends Controller
       $single_car_info = Car::findOrFail($id);
       $customer_name = User::findOrFail(Auth::id())->name;
       $customer_email = User::findOrFail(Auth::id())->email;
-      return view('customer.car_detail',compact('single_car_info','all_registered_driver','customer_name','customer_email'));
+      $all_driver_info = Driver::all();
+      return view('customer.car_detail',compact('single_car_info','all_registered_driver','customer_name','customer_email','all_driver_info'));
     }
 }

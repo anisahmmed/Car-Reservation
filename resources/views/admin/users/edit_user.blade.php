@@ -34,10 +34,10 @@
                       @if ($single_user_info->status_id == 1)
                         <option value="1" class="bg-success text-white">Active</option>
                         @else
-                          <option value="1" class="bg-danger text-white">Deactive</option>
+                          <option value="0" class="bg-danger text-white">Deactive</option>
                       @endif
                       <option value="1">Active</option>
-                      <option value="1">Deactive</option>
+                      <option value="0">Deactive</option>
                     </select>
                   </div>
                     <input class="btn btn-success btn-user btn-block" type="submit" value="Save Change">

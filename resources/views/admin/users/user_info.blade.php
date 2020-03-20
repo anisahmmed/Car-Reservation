@@ -30,6 +30,7 @@
                 $sl =1;
               @endphp
               @foreach ($all_user_info as $user_info)
+                @if ($user_info->role_id == 3)
                 <tr>
                   <td>{{ $sl++ }}</td>
                   <td>{{ $user_info->name }}</td>
@@ -51,6 +52,7 @@
                     {{-- <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"> </i>Delete</a> --}}
                   </td>
                 </tr>
+                @endif
               @endforeach
 
             </tbody>

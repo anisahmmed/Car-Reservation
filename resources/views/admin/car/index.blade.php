@@ -38,13 +38,6 @@
                       <option>Lower Class</option>
                     </select>
                   </div>
-
-
-                  ****Age Calculation code from date of birth****
-                  \Carbon\Carbon::parse($user->birth)->diff(\Carbon\Carbon::now())->format('%y years, %m months and %d days');
-                  ****Age Calculation code from date of birth****
-
-
                   <div class="form-group">
                     <input type="text" name="car_speed" class="form-control" placeholder="Car Speed">
                   </div>
@@ -57,7 +50,8 @@
                   <div class="form-group">
                     <textarea name="description" rows="3" class="form-control" placeholder="Write description here.."></textarea>
                   </div>
-                  <input class="btn btn-primary btn-user btn-block" type="submit" value="Submit">
+                  <input class="btn btn-success btn-user btn-block" type="submit" value="Submit">
+                  <a href="{{ route('car_info') }}" class="btn btn-danger btn-user btn-block">Cancel</a>
                   <hr>
                 </form>
               </div>

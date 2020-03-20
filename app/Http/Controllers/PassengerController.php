@@ -9,6 +9,11 @@ use App\RegisterDriver;
 use Auth;
 class PassengerController extends Controller
 {
+    // function __construct()
+    // {
+    //   $this->middleware('auth');
+    //   $this->middleware('check_role');
+    // }
     function passenger_index()
     {
 

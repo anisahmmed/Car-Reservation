@@ -51,7 +51,6 @@
                   <td>{{ $driver->experience }} Year</td>
                   <td>
                     <a href="{{ url('/dashboard/driver-info/edit') }}/{{ $driver->id }}" class="btn btn-primary"><i class="fas fa-edit"></i>Edit</a>
-                    <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"> </i>Delete</a>
                   </td>
                 </tr>
               @endforeach

@@ -11,11 +11,11 @@ use Auth;
 
 class CarDetailController extends Controller
 {
-    // function __construct()
-    // {
-    //   $this->middleware('auth');
-    //   $this->middleware('check_role');
-    // }
+      // function __construct()
+      // {
+      //   $this->middleware('auth');
+      //   $this->middleware('check_role');
+      // }
     function car_detail($id)
     {
       $all_registered_driver = RegisterDriver::findOrFail($id);

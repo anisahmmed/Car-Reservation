@@ -13,6 +13,12 @@
                     @csrf
                     <div class="row">
                         <div class="col-lg-6 form-group">
+                            <input class="form-control" type="hidden" name="pickup_date" value="{{ $reserve_detail->pickup_date }}" required readonly>
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <input class="form-control" type="hidden" name="drop_off_date" value="{{ $reserve_detail->drop_off_date }}" required readonly>
+                        </div>
+                        <div class="col-lg-6 form-group">
                           <label for="customer_name">Customer Name</label>
                           <input class="form-control" id="customer_name" type="text" name="customer_name" value="{{ $reserve_detail->customer_name }}" readonly>
                         </div>

@@ -37,13 +37,13 @@
                   <td>{{ $car_info->car_name }}</td>
                   <td>{{ $car_info->car_model }}</td>
                   <td>{{ $car_info->car_category }}</td>
-                  <td>{{ $car_info->car_speed }}</td>
+                  <td>{{ $car_info->car_speed }} Km</td>
                   <td>{{ $car_info->per_day_cost }} Tk</td>
                   <td><img style="height:55px;width:50px;" src="{{ asset('/uploads/car') }}/{{ $car_info->car_scenario }}" alt="{{ $car_info->car_name }}" /></td>
                   <td>{{ $car_info->description }}</td>
                   <td>
-                    <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i>Edit</a>
-                    <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"> </i>Delete</a>
+                    <a href="{{ url('/dashboard/car-info/edit') }}/{{ $car_info->id }}" class="btn btn-primary"><i class="fas fa-edit"></i>Edit</a>
+                    <a href="{{ url('/dashboard/car-info/delete') }}/{{ $car_info->id }}" class="btn btn-danger"><i class="fas fa-trash-alt"> </i>Delete</a>
                   </td>
                 </tr>
               @endforeach

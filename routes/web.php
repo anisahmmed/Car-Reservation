@@ -21,6 +21,12 @@ Route::get('/dashboard/car/index','CarController@index')->name('car_index');
 Route::post('/dashboard/car-info/insert','CarController@car_info_insert')->name('car_info_insert');
 //Car information
 Route::get('/dashboard/car-info','CarController@car_info')->name('car_info');
+//Car information edit
+Route::get('/dashboard/car-info/edit/{id}','CarController@car_info_edit')->name('car_info_edit');
+//Car Information Update
+Route::post('/dashboard/car-info/update','CarController@car_info_update')->name('car_info_update');
+//Delete Car Information
+Route::get('/dashboard/car-info/delete/{id}','CarController@car_info_delete')->name('car_info_delete');
 
 //Car deatails
 Route::get('/car-detail/{id}','CarDetailController@car_detail')->name('car_detail');
@@ -46,18 +52,24 @@ Route::post('/dashboard/user-info/update','AdminController@user_info_update')->n
 Route::get('/dashboard/add-new-user/index','AdminController@new_user')->name('new_user');
 //Add new User insert
 Route::post('/dashboard/add-new-user/insert','AdminController@new_user_insert')->name('new_user_insert');
-
 //Driver Profile
 Route::get('/dashboard/driver/profile','AdminController@driver_profile')->name('driver_profile');
 //Driver Information
 Route::get('/dashboard/driver-info','AdminController@driver_info')->name('driver_info');
 //Edit Driver Information
 Route::get('/dashboard/driver-info/edit/{id}','AdminController@driver_info_edit')->name('driver_info_edit');
+//Driver Infomation Update
+Route::post('/dashboard/driver-info/update','AdminController@driver_update')->name('driver_update');
 //Driver insert form
 Route::get('/dashboard/driver/index','AdminController@driver_index')->name('driver_index');
 Route::post('/dashboard/driver/insert','AdminController@driver_insert')->name('driver_insert');
 
 
+
+//Admin rent information
+Route::get('/dashboard/rent-info','AdminController@rent_info')->name('rent_info');
+//Delete Rent Info
+Route::get('/dashboard/rent-info/delete/{id}','AdminController@rent_info_delete')->name('rent_info_delete');
 
 //Register Driver for car
 Route::get('/dashboard/driver-register/index','RegisterDriverController@register_driver')->name('register_driver_index');
@@ -80,14 +92,14 @@ Route::get('/reserve/detail','ReservationController@reserve_detail')->name('rese
 
 
 //Customer Index
-Route::get('/customer/index','PassengerController@passenger_index')->name('customer_index');
+Route::get('/customer/index','PassengerController@passenger_index')->name('passenger_index');
 
 //single car
 // Route::get('/customer/index/car/{id}','PassengerController@car_info')->name('car_info');
 
 Route::get('/driver-email/{drivre_id}','RegisterDriverController@driver_email')->name('driver_email');
 //Driver Index
-Route::get('/driver/index-page','DriversController@driver_index')->name('driver_index_page');
+Route::get('/driver/index-page','DriversController@driver_index')->name('driver_pannel');
 //Edit Driver Info
 Route::post('/driver-profile/update','DriversController@driver_info_update')->name('driver_info_update');
 //Driver Trip Information
@@ -107,6 +119,6 @@ Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post')
 
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

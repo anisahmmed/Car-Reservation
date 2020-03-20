@@ -15,6 +15,8 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('pickupdate');
+            $table->date('dropoffdate');
             $table->string('customer_name');
             $table->string('customer_email');
             $table->integer('customer_phone');

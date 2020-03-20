@@ -12,26 +12,17 @@ use Carbon\Carbon;
 
 class DriversController extends Controller
 {
-    // function __construct()
-    // {
-    //   $this->middleware('auth');
-    //   $this->middleware('check_role');
-    // }
+      function __construct()
+      {
+        $this->middleware('auth');
+        $this->middleware('restrictdriver');
+      }
     function driver_index()
     {
-      // $driver_info = Driver::where(Auth::user()->email, driver_email)->get();
       $driver_info = Driver::all();
-      // if (Auth::user()->email == $driver_info->driver_email) {
-      //
-      // }
       return view('drivers.index',compact('driver_info'));
     }
-    //Edit Driver Information
-    // function driver_info_edit($id)
-    // {
-    //   $single_driver_info = Driver::findOrFail(Auth::id())->all();
-    //   return view('drivers.index',compact('single_driver_info'));
-    // }
+    
     //Driver Info Update
     function driver_info_update(Request $request)
     {

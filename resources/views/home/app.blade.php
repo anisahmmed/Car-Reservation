@@ -226,11 +226,13 @@
 <script language="javascript">
     $(document).ready(function () {
         $("#pickupdate").datepicker({
+            dateFormat: 'yy-mm-dd',
             minDate: 0
         });
     });
     $(document).ready(function () {
         $("#dropoffdate").datepicker({
+            dateFormat: 'yy-mm-dd',
             minDate: 0
         });
     });

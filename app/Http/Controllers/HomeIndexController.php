@@ -9,11 +9,7 @@ use App\User;
 
 class HomeIndexController extends Controller
 {
-    // function __construct()
-    // {
-    //   $this->middleware('auth');
-    //   $this->middleware('check_role');
-    // }
+      
     function index()
     {
       $all_car_info = Car::all();

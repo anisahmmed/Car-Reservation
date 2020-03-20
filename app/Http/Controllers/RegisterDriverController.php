@@ -10,6 +10,11 @@ use App\RegisterDriver;
 
 class RegisterDriverController extends Controller
 {
+    function __construct()
+    {
+      $this->middleware('auth');
+      $this->middleware('check_role');
+    }
   //Register Driver info
     function register_driver_info()
     {

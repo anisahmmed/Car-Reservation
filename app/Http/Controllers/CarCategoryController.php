@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\CarCategory;
 class CarCategoryController extends Controller
 {
+    function __construct()
+    {
+      $this->middleware('auth');
+      $this->middleware('check_role');
+    }
   //category form
     function index()
     {

@@ -4,7 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Auth;
-class RestrictUser
+
+class RestrictDriver
 {
     /**
      * Handle an incoming request.
@@ -15,12 +16,8 @@ class RestrictUser
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->role_id ==1) {
+        if (Auth::user()->role_id ==2) {
           return $next($request);
-        }
-
-        else {
-          return abort(404);
         }
     }
 }

@@ -8,6 +8,11 @@ use Carbon\Carbon;
 
 class ReservationController extends Controller
 {
+    // function __construct()
+    // {
+    //   $this->middleware('auth');
+    //   $this->middleware('check_role');
+    // }
     function reservation(Request $request)
     {
       $reserve_detail = $request;
@@ -18,6 +23,8 @@ class ReservationController extends Controller
     function confirm_reserve(Request $request)
     {
       $check = Reservation::insert([
+        'pickupdate' =>$request->pickup_date,
+        'dropoffdate' =>$request->drop_off_date,
         'customer_name' =>$request->customer_name,
         'customer_email' =>$request->customer_email,
         'customer_phone' =>$request->customer_phone,

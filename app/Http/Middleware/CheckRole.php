@@ -17,14 +17,17 @@ class CheckRole
     public function handle($request, Closure $next)
     {
         if (Auth::user()->role_id == 1) {
-          return redirect(route('dashboard'));
+          return redirect(route('admin_dashboard'));
         }
+
         elseif (Auth::user()->role_id == 2) {
-          return redirect(route('driver_index'));
+          return redirect(route('driver_pannel'));
         }
-        // elseif (Auth::user()->role_id ==3) {
-        //   return redirect(route('index'));
-        // }
+
+        elseif (Auth::user()->role_id ==3) {
+          return redirect(route('passenger_index'));
+        }
+
         else {
           return redirect(abort(404));
         }

@@ -7,15 +7,16 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Driver;
+use App\Reservation;
 use Alert;
 
 class AdminController extends Controller
 {
-  // function __construct()
-  // {
-  //   $this->middleware('auth');
-  //   $this->middleware('restrictuser');
-  // }
+    function __construct()
+    {
+      $this->middleware('auth');
+      $this->middleware('restrictuser');
+    }
   //Dashboard Index
     function index()
     {
@@ -73,6 +74,34 @@ class AdminController extends Controller
         return view('admin.driver.edit_driver',compact('single_driver_info'));
       }
 
+      //Driver Information Update
+      function driver_update(Request $request)
+      {
+        Driver::findOrFail($request->id)->update([
+          'driver_name' =>$request->driver_name,
+          'driver_email' =>$request->driver_email,
+          'driver_contact' =>$request->driver_contact,
+          'birth_date' =>$request->birth_date,
+          'present_address' =>$request->present_address,
+          'permanent_address' =>$request->permanent_address,
+          'driver_licence_no' =>$request->driving_license,
+          'experience' =>$request->experience,
+        ]);
+
+        $last_inserted_id =  $request->id;
+        if ($request->hasFile('driver_image')){
+             $photo_upload     =  $request->driver_image;
+             $photo_extension  =  $photo_upload->getClientOriginalExtension();
+             $photo_name       =  $last_inserted_id . "." . $photo_extension;
+             Image::make($photo_upload)->resize(730,408)->save(base_path('public/uploads/driver/'.$photo_name),100);
+             Driver::find($last_inserted_id)->update([
+             'driver_image' => $photo_name,
+           ]);
+         }
+        alert::success('Driver Information','Updated Successfully!');
+        return redirect(route('driver_info'));
+      }
+
       //Driver Profile
       function driver_profile()
       {
@@ -128,5 +157,20 @@ class AdminController extends Controller
         ]);
         alert::success('User','Created Successfully!');
         return redirect(route('user_info'));
+      }
+
+      //Rent Information
+    function rent_info()
+      {
+        $all_rent_info = Reservation::all();
+        return view('admin.rent.rent_info',compact('all_rent_info'));
+      }
+
+      //Delete Rent Information
+      function rent_info_delete($id)
+      {
+        Reservation::findOrFail($id)->delete();
+        alert::error('Reserve Information','Deleted!');
+        return back();
       }
 }

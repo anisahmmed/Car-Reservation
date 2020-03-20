@@ -109,7 +109,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Rent Information:</h6>
-            <a class="collapse-item" href="#">Reserve Information</a>
+            <a class="collapse-item" href="{{ route('rent_info') }}">Reserve Information</a>
           </div>
         </div>
       </li>
@@ -367,8 +367,11 @@
         </div>
       </div>
     </div>
+    <!--Sweet Alert-->
     @include('sweetalert::alert')
-@yield('script')
+    @yield('script')
+
+
     <!-- Bootstrap core JavaScript-->
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

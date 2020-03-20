@@ -118,7 +118,7 @@
 
                                                           <div class="content">
                                                                   <div class="content-block">
-                                                                      <img style="height: 250px; width: 250px; background-position: center;" src="{{ asset('uploads/driver') }}/{{ $driver_info->driver_image }}" alt="{{ $driver_info->driver_name }}">
+                                                                      <h3 class="title m-4 text-center"><img style="height: 210px; width: 210px; background-position: center;" src="{{ asset('uploads/driver') }}/{{ $driver_info->driver_image }}" alt="{{ $driver_info->driver_name }}"></h3>
                                                                   </div>
                                                                   <div class="content-block">
                                                                       <h3 class="title m-4 text-center">Personal Information</h3>
@@ -130,13 +130,13 @@
                                                                             <label for=""><b>Email:</b> {{ $driver_info->driver_email }}</label>
                                                                           </div>
                                                                           <div class="col-lg-6">
-                                                                            <label for=""><b>Contact:</b> {{ $driver_info->driver_contact }}</label>
+                                                                            <label for=""><b>Contact:</b> 0{{ $driver_info->driver_contact }}</label>
                                                                           </div>
                                                                           <div class="col-lg-6">
-                                                                            <label for=""><b>Age:</b> {{ \Carbon\Carbon::parse($driver_info->birth_date)->age }}</label>
+                                                                            <label for=""><b>Age:</b> {{ \Carbon\Carbon::parse($driver_info->birth_date)->age }} Year</label>
                                                                           </div>
                                                                           <div class="col-lg-6">
-                                                                            <label for=""><b>Experience:</b> {{ $driver_info->experience }}</label>
+                                                                            <label for=""><b>Experience:</b> {{ $driver_info->experience }} Year</label>
                                                                           </div>
                                                                           <div class="col-lg-6">
                                                                             <label for=""><b>Driving License Number:</b> {{ $driver_info->driver_licence_no }}</label>
@@ -196,12 +196,12 @@
                                                                   <div class="row">
                                                                       <div class="form-group col-md-6">
                                                                           <label for="exampleInputEmail1">Pickup Date</label>
-                                                                          <input type='text' id="pickupdate" name="pickup_date" class='form-control' required>
+                                                                          <input type='text' id="pickupdate" name="pickup_date" class='form-control' data-date-format='yy-mm-dd' required>
                                                                       </div>
 
                                                                       <div class="form-group col-md-6">
                                                                           <label for="exampleInputEmail1">Drop Off Date</label>
-                                                                          <input type='text' id="dropoffdate" name="drop_off_date" class='form-control' required>
+                                                                          <input type='text' id="dropoffdate" name="drop_off_date" data-date-format='yy-mm-dd' class='form-control' required>
                                                                       </div>
                                                                   </div>
                                                               </div>

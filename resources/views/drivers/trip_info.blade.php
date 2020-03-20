@@ -7,7 +7,7 @@
   <!-- Begin Page Content -->
   <div class="container-fluid">
     <div class="">
-      <a href="{{ route('driver_index_page') }}" class="btn btn-success">Go to Profile Again</a>
+      <a href="{{ route('driver_pannel') }}" class="btn btn-success">Go to Profile Again</a>
     </div>
     <hr>
     <!-- DataTales Example -->

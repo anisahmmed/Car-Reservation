@@ -30,7 +30,7 @@ class ReservationController extends Controller
         'customer_phone' =>$request->customer_phone,
         'city' =>$request->city,
         'full_address' =>$request->full_address,
-        'car_model' =>$request->car_model,
+        'car_chassis' =>$request->car_model,
         'driver' =>$request->driver,
         'driver_email' =>$request->driver_email,
         'duration' =>$request->duration,

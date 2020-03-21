@@ -106,31 +106,30 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav main-menu ml-auto">
                         <li><a href="{{ url('/') }}">HOME</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
-                        <li><a href="cars.html">CARS</a></li>
-                        <li><a href="service.html">SERVICE</a></li>
-                        <li><a href="drivers.html">DRIVER</a></li>
-                        <li><a href="popular-location.html">LOCATION</a></li>
-                        <li><a href="blog.html">BLOG</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                        <li>
-                            <a href="{{ route('login_page') }}">LOGIN</a>
-                        </li>
-                        @guest
-                        @else
-                        <li class="dropdown"><a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">{{ Auth::user()->name }}</a>
-                            <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">CARS</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        <li><a href="#">DRIVER</a></li>
+                        <li><a href="#">LOCATION</a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="{{ route('login_page') }}">LOGIN</a></li>
+
+                          @guest
+                          @else
+                            <li class="dropdown"><a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">{{ Auth::user()->name }}</a>
+                              <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown">
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                 </li>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
+                                  @csrf
                                 </form>
-                            </ul>
-                        </li>
+                              </ul>
+                            </li>
 
-                        @endguest
+                          @endguest
                     </ul>
                 </div>
             </nav>

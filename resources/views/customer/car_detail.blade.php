@@ -225,7 +225,7 @@
                                                                           <textarea name="full_address" rows="3" required class="form-control" placeholder="Full Address" required></textarea>
                                                                       </div>
                                                                       <div class="col-lg-12 form-group">
-                                                                          <input class="form-control" type="hidden" name="car_model" value="{{ $single_car_info->car_model }}">
+                                                                          <input class="form-control" type="hidden" name="car_model" value="{{ $single_car_info->chassis_no }}">
                                                                       </div>
                                                                       <div class="col-lg-12 form-group">
                                                                         <input class="form-control" type="hidden" name="driver" value="{{ App\Driver::findOrFail($all_registered_driver->driver_name_id)->driver_name }}">

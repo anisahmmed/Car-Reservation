@@ -19,5 +19,8 @@ class RestrictDriver
         if (Auth::user()->role_id ==2) {
           return $next($request);
         }
+        else {
+          return redirect(abort(404));
+        }
     }
 }

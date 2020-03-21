@@ -22,6 +22,8 @@
               <tr>
                 <th>SL</th>
                 <th>Customer Name</th>
+                <th>PickUP Date</th>
+                <th>DropOff Date</th>
                 <th>Customer Email</th>
                 <th>Customer Contact</th>
                 <th>Full Address</th>
@@ -39,6 +41,8 @@
                   <tr>
                     <td>{{ $sl++ }}</td>
                     <td>{{ $trip->customer_name }}</td>
+                    <td>{{ date('d-M-Y', strtotime($trip->pickupdate)) }}</td>
+                    <td>{{ date('d-M-Y', strtotime($trip->dropoffdate)) }}</td>
                     <td>{{ $trip->customer_email }}</td>
                     <td>0{{ $trip->customer_phone }}</td>
                     <td>{{ $trip->full_address }}</td>

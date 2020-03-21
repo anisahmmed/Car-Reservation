@@ -22,7 +22,7 @@ class DriversController extends Controller
       $driver_info = Driver::all();
       return view('drivers.index',compact('driver_info'));
     }
-    
+
     //Driver Info Update
     function driver_info_update(Request $request)
     {
@@ -48,7 +48,7 @@ class DriversController extends Controller
          ]);
        }
        alert()->success('Profile Updated!');
-      return redirect(route('driver_index_page'));
+      return redirect(route('driver_pannel'));
     }
 
     //Driver Trip Information

@@ -34,15 +34,15 @@
 
                   <div class="form-group">
                     <label for="name">User Name</label>
-                    <input type="text" id="name" class="form-control" name="name" required>
+                    <input type="text" id="name" class="form-control" name="name" placeholder="User Name" required>
                   </div>
                   <div class="form-group">
                     <label for="email">User Email</label>
-                    <input type="email" id="email" class="form-control" name="email" required>
+                    <input type="email" id="email" class="form-control" name="email" placeholder="User Email" required>
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" required>
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
                   </div>
                   <div class="form-group">
                     <label for="user_status">User Role</label>

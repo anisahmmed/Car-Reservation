@@ -22,7 +22,7 @@ class CreateReservationsTable extends Migration
             $table->integer('customer_phone');
             $table->string('city');
             $table->longText('full_address');
-            $table->string('car_model');
+            $table->string('car_chassis');
             $table->string('driver');
             $table->string('driver_email');
             $table->integer('duration');

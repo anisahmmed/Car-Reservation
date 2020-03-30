@@ -42,7 +42,7 @@ class StripePaymentController extends Controller
         // $car_name = $request->car_name;
         $car_model = $request->car_model;
         $total_price = $request->total_price;
-        Mail::to('anisahmed450@gmail.com')->send(new NotificationMail($car_model,$total_price));
+        Mail::to($request->user())->send(new NotificationMail($car_model,$total_price));
 
         alert()->success('Successfully Reserved!');
 

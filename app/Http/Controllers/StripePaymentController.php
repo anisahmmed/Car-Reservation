@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Session;
 use Stripe;
 use App\Reservation;
+use App\Mail\NotificationMail;
+use Mail;
 
 class StripePaymentController extends Controller
 {
@@ -37,8 +39,13 @@ class StripePaymentController extends Controller
           'payment_status' =>1,
         ]);
 
+        // $car_name = $request->car_name;
+        $car_model = $request->car_model;
+        $total_price = $request->total_price;
+        Mail::to('anisahmed450@gmail.com')->send(new NotificationMail($car_model,$total_price));
+
         alert()->success('Successfully Reserved!');
 
-        return redirect(route('customer_index'));
+        return redirect(route('passenger_index'));
     }
 }

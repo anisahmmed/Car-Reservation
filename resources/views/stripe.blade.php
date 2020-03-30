@@ -57,6 +57,8 @@
                         <input type="hidden" name="check" value="{{ $check }}">
                         <input type="hidden" name="customer_phone" value="{{ $customer_phone }}">
                         <input type="hidden" name="total_price" value="{{ $total_price }}">
+                        {{-- <input type="hidden" name="car_name" value="{{ $car_name }}"> --}}
+                        <input type="hidden" name="car_model" value="{{ $car_model }}">
                         <div class='form-row row'>
                             <div class='col-xs-12 form-group required'>
                                 <label class='control-label'>Name on Card</label> <input

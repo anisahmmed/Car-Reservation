@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reservation;
+use App\Car;
 use Carbon\Carbon;
 
 class ReservationController extends Controller
@@ -41,7 +42,9 @@ class ReservationController extends Controller
       if ($check) {
         $customer_phone = $request->customer_phone;
         $total_price = $request->total_cost;
-        return view('stripe',compact('check','customer_phone','total_price'));
+        // $car_name = Car::findOrFail($request->car_chassis)->car_name;
+        $car_model = $request->car_model;
+        return view('stripe',compact('check','customer_phone','total_price','car_model'));
       }
       else {
         echo "Fail";

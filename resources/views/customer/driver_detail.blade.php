@@ -38,7 +38,7 @@
                             <div class="entry-single-thumb">
                                 <div style="display: " class="img_lead"
                                      id="image_1">
-                                    <img src="{{ asset('uploads/car') }}/{{ $single_driver_info->driver_image }}"class="img-responsive img-thumbnail">
+                                    <img src="{{ asset('uploads/driver') }}/{{ $single_driver_info->driver_image }}"class="img-responsive img-thumbnail">
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
 
                                     <li>
                                         <p>Age</p>
-                                        <p><span>{{ $single_driver_info->age }}</span></p>
+                                        <p><span>{{ \Carbon\Carbon::parse($single_driver_info->birth_date)->age }}</span></p>
                                     </li>
                                     <li>
                                         <p>Experience</p>

@@ -2,6 +2,12 @@
 
 //Index
 Route::get('/','HomeIndexController@index')->name('index');
+//About Page
+Route::get('/about','HomeIndexController@about')->name('about');
+//Service Page
+Route::get('/service','HomeIndexController@service')->name('service');
+//Drivers Page
+Route::get('/drivers','HomeIndexController@drivers')->name('drivers');
  //Admin Dashboard
 Route::get('/dashboard','AdminController@index')->name('admin_dashboard');
 

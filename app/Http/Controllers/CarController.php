@@ -12,7 +12,7 @@ class CarController extends Controller
     function __construct()
     {
       $this->middleware('auth');
-      $this->middleware('check_role');
+      $this->middleware('restrictuser');
     }
     //input form
     function index()

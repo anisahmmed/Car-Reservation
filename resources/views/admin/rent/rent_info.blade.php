@@ -35,26 +35,29 @@
               $sl =1;
               @endphp
               @foreach ($all_rent_info as $rent_info)
-                <tr>
-                  <td>{{ $sl++ }}</td>
-                  <td>{{ $rent_info->customer_name }}</td>
-                  <td>{{ $rent_info->customer_email }}</td>
-                  <td>{{ $rent_info->customer_phone }}</td>
-                  <td>{{ $rent_info->city }}</td>
-                  <td>{{ $rent_info->full_address }}</td>
-                  <td>{{ $rent_info->car_model }}</td>
-                  <td>{{ $rent_info->driver }}</td>
-                  <td>{{ $rent_info->duration }} Day</td>
-                  <td>{{ $rent_info->total_cost }} Tk</td>
-                  @if ($rent_info->payment_status == 1)
-                    <td>Paid</td>
+                @if ($rent_info->payment_status == 1)
+
+                  <tr>
+                    <td>{{ $sl++ }}</td>
+                    <td>{{ $rent_info->customer_name }}</td>
+                    <td>{{ $rent_info->customer_email }}</td>
+                    <td>{{ $rent_info->customer_phone }}</td>
+                    <td>{{ $rent_info->city }}</td>
+                    <td>{{ $rent_info->full_address }}</td>
+                    <td>{{ $rent_info->car_chassis }}</td>
+                    <td>{{ $rent_info->driver }}</td>
+                    <td>{{ $rent_info->duration }} Day</td>
+                    <td>{{ $rent_info->total_cost }} Tk</td>
+                    @if ($rent_info->payment_status == 1)
+                      <td>Paid</td>
                     @else
                       <td>Pending</td>
-                  @endif
-                  <td>
-                    <a href="{{ url('/dashboard/rent-info/delete') }}/{{ $rent_info->id }}" class="btn btn-danger"><i class="fas fa-trash-alt"> </i>Delete</a>
-                  </td>
-                </tr>
+                    @endif
+                    <td>
+                      <a href="{{ url('/dashboard/rent-info/delete') }}/{{ $rent_info->id }}" class="btn btn-danger"><i class="fas fa-trash-alt"> </i>Delete</a>
+                    </td>
+                  </tr>
+                @endif
                 @endforeach
 
             </tbody>

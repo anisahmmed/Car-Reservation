@@ -42,7 +42,7 @@ class DriversController extends Controller
            $photo_upload     =  $request->driver_image;
            $photo_extension  =  $photo_upload->getClientOriginalExtension();
            $photo_name       =  $last_inserted_id . "." . $photo_extension;
-           Image::make($photo_upload)->resize(730,408)->save(base_path('public/uploads/driver/'.$photo_name),100);
+           Image::make($photo_upload)->resize(254,229)->save(base_path('public/uploads/driver/'.$photo_name),100);
            Driver::find($last_inserted_id)->update([
            'driver_image' => $photo_name,
          ]);

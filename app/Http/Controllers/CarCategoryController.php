@@ -9,7 +9,7 @@ class CarCategoryController extends Controller
     function __construct()
     {
       $this->middleware('auth');
-      $this->middleware('check_role');
+      $this->middleware('restrictuser');
     }
   //category form
     function index()

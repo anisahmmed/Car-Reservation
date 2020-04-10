@@ -96,7 +96,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="site-logo site-title" href="#"><img
-                            {{-- src="{{ asset('frontend/assets/user/img/frontEnd/logo.png') }}" alt="site-logo" --}}
+                            src="{{ asset('frontend/assets/user/img/frontEnd/logo.png') }}" alt="site-logo"
                             style="max-width: 210px; max-height: 60px;"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -106,10 +106,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav main-menu ml-auto">
                         <li><a href="{{ url('/') }}">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="{{ route('about') }}">ABOUT</a></li>
                         <li><a href="#">CARS</a></li>
-                        <li><a href="#">SERVICE</a></li>
-                        <li><a href="#">DRIVER</a></li>
+                        <li><a href="{{ route('service') }}">SERVICE</a></li>
+                        <li><a href="{{ route('drivers') }}">DRIVER</a></li>
                         <li><a href="#">LOCATION</a></li>
                         <li><a href="#">BLOG</a></li>
                         <li><a href="#">CONTACT</a></li>
